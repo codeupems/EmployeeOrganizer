@@ -1,9 +1,9 @@
 public class DaoFactory {
-    private static EmpList empListDao;
-    public static EmpList empListDao() {
+    private static Employees empListDao;
+    public static Employees empListDao() {
         if (empListDao == null) {
-            empListDao = new MySQLAdsDao();
+            empListDao = new Employees();
         }
-        return adsDao;
+        return Employees;
     }
 }
