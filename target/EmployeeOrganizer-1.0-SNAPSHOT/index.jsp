@@ -9,10 +9,14 @@
 <html>
 <head>
     <title>Title</title>
+    <%@include file="WEB-INF/partials/head.jsp"%>
 </head>
 <body>
+<%@ include file="WEB-INF/partials/navbar.jsp" %>
 <h1>
     Hello Mundo!!!
 </h1>
+
+<%@ include file="WEB-INF/partials/footer.jsp" %>
 </body>
 </html>
