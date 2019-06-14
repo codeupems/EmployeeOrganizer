@@ -1,7 +1,7 @@
+package dao;
 
 import com.mysql.jdbc.Driver;
 import mysql.Config;
-import mysql.MySQLConnection;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -11,7 +11,7 @@ import java.util.List;
 public class EmployeesDao implements Employees {
     /*
      *
-     * Create a class named EmployeesDao that implements the Ads interface
+     * Create a class named dao.EmployeesDao that implements the Ads interface
 
 
      * This class should have a private instance property named connection of type Connection that is

@@ -9,7 +9,7 @@
 
 <footer>
 
-    <code>Handfeet stuff will go here.</code>
+    <code>Leghand stuff will go here.</code>
 
 </footer>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

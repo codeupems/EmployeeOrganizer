@@ -1,3 +1,7 @@
+package servlets;
+
+import dao.DaoFactory;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -5,13 +9,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "EmployeeListServlet", urlPatterns="/index")
+
+@WebServlet(name = "Servlet", urlPatterns= "/employees-list" )
 public class EmployeeListServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/").forward(request, response);
-    }
+//    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//
+//    }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        request.setAttribute("emps", DaoFactory.empListDao().all());
+        request.getRequestDispatcher("WEB-INF/employees-list.jsp").forward(request, response);
     }
 }
