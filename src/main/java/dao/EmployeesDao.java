@@ -38,11 +38,18 @@ public class EmployeesDao implements Employees {
         }
 
     }
-    public List<Employee> all(){
+    public List<Employee> all(int perPage, int pageNum){
         List<Employee> employeesList = new ArrayList<Employee>();
+        System.out.println("perpage starts at " + perPage);
         try {
             Statement stmt = connection.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM employees LIMIT 100");
+            //perPage-=2;
+            System.out.println("perpage before query string = " + perPage);
+
+            String query = String.format("SELECT * FROM employees LIMIT %d OFFSET %d", perPage ,
+                    (pageNum * perPage)-perPage);
+            System.out.println(query);
+            ResultSet rs = stmt.executeQuery(query);
             while(rs.next()){
                 Employee emp = new Employee();
                 emp.setFirst_name(rs.getString("first_name"));

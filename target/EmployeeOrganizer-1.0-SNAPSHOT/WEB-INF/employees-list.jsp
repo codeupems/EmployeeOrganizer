@@ -14,22 +14,71 @@
 </head>
 <body>
 <%@ include file="/WEB-INF/partials/navbar.jsp" %>
-<h1>Employees List</h1>
-<c:forEach var="emp" items="${Emps}">
+<script type="text/javascript">
 
-    <div class="card" style="width: 18rem;">
-        <img src="https://robohash.org/${emp.name}" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">${emp.first_name} ${emp.last_name}</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+	onunload = function()
+	{
+		var perpage = document.getElementById('perpage');
+		self.name = 'fooidx' + perpage.selectedIndex;
+	}
+
+	onload = function()
+	{
+		var idx, perpage = document.getElementById('perpage');
+		perpage.selectedIndex = (idx = self.name.split('fooidx')) ?	idx[1] : 0;
+	}
+
+</script>
+<div class="container">
+    <h1>Employees List</h1>
+    <form action="/employees-list" method="post">
+        <div class="float-left clear-fix col-12">
+            <div class="col-3 float-left m-3 ">
+                <label for="perpage">Show how many per page?</label>
+                <select id="perpage" class="form-control form-control-sm " name="perpage" onchange="options[selectedIndex].value&&self.location.reload(true)">>
+
+                    <option value="6">6</option>
+                    <option value="12">12</option>
+                    <option value="18">18</option>
+                    <option value="24">24</option>
+                    <option value="30">30</option>
+                </select>
+            </div>
+
+            <%-- buttons to move page forard or backward.--%>
+            <div class="col-3 float-right m-3 form-row">
+
+                <button class="btn-sm btn btn-light float-right" type="submit" name="pagenum"
+                        value="${pagenum} -1">Previous
+                    Page</button>
+                <button class="btn-sm btn btn-light float-right" name="pagenum" value=${pagenum}>
+                    Page Number <span class="badge badge-light">${pagenum}</span>
+                </button>
+                <button class="btn-sm btn btn-light float-right" type="submit" name="pagenum"
+                       value="${pagenum} +1" >Next Page
+                </button>
+            </div>
         </div>
+
+    </form>
+    <div class="col-12">
+        <c:forEach var="emp" items="${emps}">
+
+            <div class="card float-left m-3 bg-light" style="width: 20rem;">
+                <img src="https://robohash.org/${emp.first_name}?set=set1" class="card-img-top"
+                     alt="...">
+                <div class="card-body bg_white">
+                    <h5 class="card-title">${emp.first_name} ${emp.last_name}</h5>
+                    <p class="card-text">ID: ${emp.emp_no}</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+
+        </c:forEach>
     </div>
 
-</c:forEach>
+</div>
 
-
-
-<%@ include file="/WEB-INF/partials/footer.jsp" %>
+<%--<%@ include file="/WEB-INF/partials/footer.jsp" %>--%>
 </body>
 </html>
