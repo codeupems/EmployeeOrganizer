@@ -25,6 +25,11 @@ public class EmployeesDao implements Employees {
     private Config config = new Config();
     private Connection connection;
 
+
+    public static void main(String[] args) {
+        DaoFactory.empListDao().search("Bezalel");
+    }
+
     public EmployeesDao() {
         try {
             DriverManager.registerDriver(new Driver());
@@ -46,7 +51,7 @@ public class EmployeesDao implements Employees {
             //perPage-=2;
             System.out.println("perpage before query string = " + perPage);
 
-            String query = String.format("SELECT * FROM employees LIMIT %d OFFSET %d", perPage ,
+            String query = String.format("SELECT * FROM employees limit %d offset %d", perPage ,
                     (pageNum * perPage)-perPage);
             System.out.println(query);
             ResultSet rs = stmt.executeQuery(query);
@@ -67,6 +72,45 @@ public class EmployeesDao implements Employees {
         }
 
 
+        return employeesList;
+    }
+
+    public List<Employee> search(String searcQuery){
+        System.out.println("search started");
+        List<Employee> employeesList = new ArrayList<Employee>();
+        String sQFirst = "";
+        String sQSecond = "";
+        String[] spltQuery = searcQuery.split(" ");
+        if (spltQuery.length >1) {
+             sQFirst = spltQuery[0];
+             sQSecond = spltQuery[1];
+        }else {
+             sQFirst = spltQuery[0];
+             sQSecond = "";
+        }
+        String formatQuery =
+                "SELECT * FROM employees where first_name like '%"+ sQFirst+ "%' and " +
+                        "last_name like '%" + sQSecond+"%'";
+
+        try {
+
+            System.out.println(formatQuery);
+            Statement stmt = connection.createStatement();
+            ResultSet rs = stmt.executeQuery(formatQuery);
+            while(rs.next()){
+                Employee emp = new Employee();
+                emp.setFirst_name(rs.getString("first_name"));
+                System.out.println(emp.getFirst_name());
+                emp.setLast_name(rs.getString("last_name"));
+                System.out.println(emp.getLast_name());
+                emp.setEmp_no(rs.getInt("emp_no"));
+                System.out.println(emp.getEmp_no());
+                employeesList.add(emp);
+
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
         return employeesList;
     }
 

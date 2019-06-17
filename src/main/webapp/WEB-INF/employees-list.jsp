@@ -46,15 +46,15 @@
             </div>
 
             <%-- buttons to move page forard or backward.--%>
-            <div class="col-3 float-right m-3 form-row">
+            <div class="col-6 float-right m-3 form-row">
 
-                <button class="btn-sm btn btn-light float-right" type="submit" name="pagenum"
+                <button class=" btn btn-light float-right" type="submit" name="pagenum"
                         value="${pagenum} -1">Previous
                     Page</button>
-                <button class="btn-sm btn btn-light float-right" name="pagenum" value=${pagenum}>
+                <button class=" btn btn-light float-right" name="pagenum" value=${pagenum}>
                     Page Number <span class="badge badge-light">${pagenum}</span>
                 </button>
-                <button class="btn-sm btn btn-light float-right" type="submit" name="pagenum"
+                <button class=" btn btn-light float-right" type="submit" name="pagenum"
                        value="${pagenum} +1" >Next Page
                 </button>
             </div>
@@ -65,8 +65,8 @@
         <c:forEach var="emp" items="${emps}">
 
             <div class="card float-left m-3 bg-light" style="width: 20rem;">
-                <img src="https://robohash.org/${emp.first_name}?set=set1" class="card-img-top"
-                     alt="...">
+<%--                <img src="https://robohash.org/${emp.first_name}?set=set5" class="card-img-top"--%>
+<%--                     alt="...">--%>
                 <div class="card-body bg_white">
                     <h5 class="card-title">${emp.first_name} ${emp.last_name}</h5>
                     <p class="card-text">ID: ${emp.emp_no}</p>
