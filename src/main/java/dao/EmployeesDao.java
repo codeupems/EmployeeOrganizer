@@ -75,12 +75,12 @@ public class EmployeesDao implements Employees {
         return employeesList;
     }
 
-    public List<Employee> search(String searcQuery){
+    public List<Employee> search(String searchQuery){
         System.out.println("search started");
         List<Employee> employeesList = new ArrayList<Employee>();
         String sQFirst = "";
         String sQSecond = "";
-        String[] spltQuery = searcQuery.split(" ");
+        String[] spltQuery = searchQuery.split(" ");
         if (spltQuery.length >1) {
              sQFirst = spltQuery[0];
              sQSecond = spltQuery[1];
