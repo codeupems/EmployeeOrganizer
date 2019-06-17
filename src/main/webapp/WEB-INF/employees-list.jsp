@@ -38,7 +38,7 @@
                 <select id="perpage" class="form-control form-control-sm " name="perpage" onchange="options[selectedIndex].value&&self.location.reload(true)">>
 
                     <option value="6">6</option>
-                    <option value="12">12</option>
+                    <option value="12" selected>12</option>
                     <option value="18">18</option>
                     <option value="24">24</option>
                     <option value="30">30</option>
@@ -65,12 +65,12 @@
         <c:forEach var="emp" items="${emps}">
 
             <div class="card float-left m-3 bg-light" style="width: 20rem;">
-<%--                <img src="https://robohash.org/${emp.first_name}?set=set5" class="card-img-top"--%>
-<%--                     alt="...">--%>
+                <img src="https://robohash.org/${emp.first_name}?set=set2" class="card-img-top"
+                     alt="...">
                 <div class="card-body bg_white">
-                    <h5 class="card-title">${emp.first_name} ${emp.last_name}</h5>
-                    <p class="card-text">ID: ${emp.emp_no}</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <h5 class="card-title"><c:out value = "${emp.first_name} ${emp.last_name}"/></h5>
+                    <p class="card-text">ID:  <c:out value="${emp.emp_no}" /></p>
+                    <a href="#" class="btn btn-primary disabled">View Employee</a>
                 </div>
             </div>
 

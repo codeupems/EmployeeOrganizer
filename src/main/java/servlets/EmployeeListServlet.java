@@ -17,7 +17,7 @@ public class EmployeeListServlet extends HttpServlet {
         System.out.printf("Post request hit with following parameters: %s %s %n",
                 request.getParameter("pagenum"), request.getParameter("perpage"));//debug info
 //        set up vars incase none are passed
-        int perPage = 12;
+        int perPage = 6;
         int pageNum = 1;
         String pageNumParam= request.getParameter("pagenum"); //since I am calling this a lot I
         // got tired of typing out the whole thing.
