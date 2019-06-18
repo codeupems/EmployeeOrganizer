@@ -9,7 +9,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>dao.Employees</title>
+    <title>Employees</title>
     <%@ include file="/WEB-INF/partials/head.jsp" %>
 </head>
 <body>
@@ -20,13 +20,13 @@
 	{
 		var perpage = document.getElementById('perpage');
 		self.name = 'fooidx' + perpage.selectedIndex;
-	}
+	};
 
 	onload = function()
 	{
 		var idx, perpage = document.getElementById('perpage');
 		perpage.selectedIndex = (idx = self.name.split('fooidx')) ?	idx[1] : 0;
-	}
+	};
 
 </script>
 <div class="container">
@@ -35,10 +35,11 @@
         <div class="float-left clear-fix col-12">
             <div class="col-3 float-left m-3 ">
                 <label for="perpage">Show how many per page?</label>
-                <select id="perpage" class="form-control form-control-sm " name="perpage" onchange="options[selectedIndex].value&&self.location.reload(true)">>
+                <select id="perpage" class="form-control form-control-sm " name="perpage"
+                        onchange="options[selectedIndex].value&&self.location.reload(true)">
 
                     <option value="6">6</option>
-                    <option value="12" selected>12</option>
+                    <option value="12" >12</option>
                     <option value="18">18</option>
                     <option value="24">24</option>
                     <option value="30">30</option>
@@ -78,7 +79,8 @@
     </div>
 
 </div>
-
-<%--<%@ include file="/WEB-INF/partials/footer.jsp" %>--%>
+<div>
+<%@ include file="/WEB-INF/partials/footer.jsp" %>
+</div>
 </body>
 </html>
