@@ -10,4 +10,3 @@ CREATE TABLE users (
                        emp_no INT NOT NULL,
                        PRIMARY KEY (id),
                        FOREIGN KEY (emp_no) REFERENCES employees(emp_no)
-);
