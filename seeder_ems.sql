@@ -33,16 +33,19 @@ VALUES
 
 INSERT INTO users (username, password, email, bio, goals, emp_id)
 VALUES
-       ('Myktank', 'codeup', 'Myktank@live.com', 'how am i so good at life', 'I want to learn', 4),
-       ('Johnwizard', 'codeup', 'Johnwizard@live.com', 'how am i not so good at life', 'I want to learn', 5),
-       ('ElleA', 'codeup', 'ElleA@live.com', 'how am i amazingly good at life', 'I want to know', 6),
-       ('ZachF', 'codeup', 'ZachF@live.com', 'how am i life', 'I want to see', 7),
-       ('MikeS', 'codeup', 'MikeS@live.com', 'how i  life', 'I want to hear', 8),
-       ('RyanP', 'codeup', 'RyanP@live.com', 'how am i', 'I want you to know', 9),
-       ('JustinB', 'codeup', 'JustinB@live.com', 'how am i good', 'I want you to hear', 10),
-       ('JoshB', 'codeup', 'JoshB@live.com', 'how am i amazingly', 'I want to jump alot', 11),
-       ('Bobwill', 'codeup', 'Bobwill@live.com', 'how am i at life', 'I want progress', 12),
-       ('Siri', 'codeup', 'Siri@live.com', 'how am i amazingly good at life', 'I want to success', 13);
+       ('Myktank', 'codeup', 'Myktank@live.com', 'how am i so good at life', 'I want to learn', 1),
+       ('Johnwizard', 'codeup', 'Johnwizard@live.com', 'how am i not so good at life', 'I want to
+learn', 2),
+       ('ElleA', 'codeup', 'ElleA@live.com', 'how am i amazingly good at life', 'I want to know',
+        3),
+       ('ZachF', 'codeup', 'ZachF@live.com', 'how am i life', 'I want to see', 4),
+       ('MikeS', 'codeup', 'MikeS@live.com', 'how i  life', 'I want to hear', 5),
+       ('RyanP', 'codeup', 'RyanP@live.com', 'how am i', 'I want you to know', 6),
+       ('JustinB', 'codeup', 'JustinB@live.com', 'how am i good', 'I want you to hear', 7),
+       ('JoshB', 'codeup', 'JoshB@live.com', 'how am i amazingly', 'I want to jump alot', 8),
+       ('Bobwill', 'codeup', 'Bobwill@live.com', 'how am i at life', 'I want progress', 9),
+       ('Siri', 'codeup', 'Siri@live.com', 'how am i amazingly good at life', 'I want to
+success', 10);
 
 # SELECT * FROM users;
 
