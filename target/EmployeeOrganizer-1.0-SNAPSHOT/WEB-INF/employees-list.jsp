@@ -66,7 +66,7 @@
         <c:forEach var="emp" items="${emps}">
 
             <div class="card float-left m-3 bg-light" style="width: 20rem;">
-                <img src="https://robohash.org/${emp.first_name}?set=set2" class="card-img-top"
+                <img src="https://robohash.org/${emp.first_name}?set=set5" class="card-img-top"
                      alt="...">
                 <div class="card-body bg_white">
                     <h5 class="card-title"><c:out value = "${emp.first_name} ${emp.last_name}"/></h5>
