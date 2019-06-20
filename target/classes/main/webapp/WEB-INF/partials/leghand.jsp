@@ -7,9 +7,9 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<footer>
+<footer class="fixed-bottom leghand">
 
-    <code>Leghand stuff will go here.</code>
+    <p>Leghand stuff will go here.</p>
 
 </footer>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

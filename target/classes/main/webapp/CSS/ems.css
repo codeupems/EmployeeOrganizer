@@ -1,0 +1,27 @@
+body
+{
+    background-color: #D89D91;
+    font-family: 'Lato', sans-serif;
+    color: #7E8E77;
+    text-align: center;
+    text-shadow: #000;
+}
+h1{
+    font-family: 'EB Garamond', serif;
+}
+.nav-style{
+    background-color: rgba(224, 219, 217, 0.53);
+    margin: 20px;
+    border-radius: 8px;
+}
+.nav-li{
+    color: #7E8E77;
+}
+a:hover{
+    color: #5b6557;
+}
+
+.leghand{
+    background-color: rgba(224, 219, 217, 0.53);
+    color: #7E8E77;
+}

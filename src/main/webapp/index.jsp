@@ -8,15 +8,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Employee Lister</title>
     <%@include file="WEB-INF/partials/head.jsp"%>
 </head>
 <body>
 <%@ include file="WEB-INF/partials/navbar.jsp" %>
 <h1>
-    Hello Mundo!!!
+   Welcome to Employee Lister! Your one-stop shop for Employees!
 </h1>
 
-<%@ include file="WEB-INF/partials/footer.jsp" %>
+<%@ include file="WEB-INF/partials/leghand.jsp" %>
 </body>
 </html>
