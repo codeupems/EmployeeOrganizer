@@ -59,28 +59,13 @@
         <div class="form-group">
             <label for="dept_id">Department ID</label>
             <select class="form-control my-1 mr-sm-2" id="dept_id" name="dept_id" onClick="getJobTitle()" required>
-<%--                <option selected>Choose...</option>--%>
-<%--                <option value="1" id="Tech">Technology</option>--%>
-<%--                <option value="2" id="HR">HR</option>--%>
-<%--                <option value="3" id="Fin">Finance</option>--%>
-<%--                <option value="4" id="Mar">Marketing</option>--%>
-<%--                <option value="5" id="Prod">Production</option>--%>
+<%--                This is dynamically made in the jobTitleChoice.js / DONT change "id"--%>
             </select>
         </div>
         <div class="form-group">
             <label for="job_id">Job Title</label>
             <select class="form-control my-1 mr-sm-2" id="job_id" name="job_id" required>
-<%--                <option selected>Choose...</option>--%>
-<%--                <option value="1" id="clerk">Clerk</option>--%>
-<%--                <option value="2" id="Admin">Administrator</option>--%>
-<%--                <option value="3" id="LAdmin">Lead Administrator</option>--%>
-<%--                <option value="4" id="Pro">Programmer</option>--%>
-<%--                <option value="5" id="SPro">Senior Programmer</option>--%>
-<%--                <option value="6" id="ProA">Program Architect</option>--%>
-<%--                <option value="7" id="SProA">Senior Program Architect</option>--%>
-<%--                <option value="8" id="Acc">Accountant</option>--%>
-<%--                <option value="9" id="LAcc">Lead Accountant</option>--%>
-<%--                <option value="10" id="Consult">Consultant</option>--%>
+<%--                This is dynamically made in the jobTitleChoice.js / DONT change "id"--%>
             </select>
         </div>
         <input type="submit" class="btn btn-primary btn-block">
