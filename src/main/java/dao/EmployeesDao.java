@@ -149,25 +149,25 @@ public class EmployeesDao implements Employees {
 
     @Override
     public long insert(Employee emp) {
-        String query = "INSERT INTO employees(id, gender, first_name, last_name, birth_date, hire_date, salary," +
-                " bio, goals, dept_id, job_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO ems_db.employees( gender, first_name, last_name, birth_date, hire_date, salary," +
+                " bio, goals, dept_id, job_id) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
         try {
             PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
-            stmt.setInt(1, emp.getId());
-            stmt.setString(2, emp.getGender());
-            stmt.setString(3, emp.getFirst_name());
-            stmt.setString(4, emp.getLast_name());
-            stmt.setDate(5, (Date) emp.getBirth_date());
-            stmt.setDate(6, (Date) emp.getHire_date());
-            stmt.setDouble(7, emp.getSalary());
-            stmt.setString(8, emp.getBio());
-            stmt.setString(9, emp.getGoals());
-            stmt.setInt(10, emp.getDept_id());
-            stmt.setInt(11, emp.getJob_id());
+            stmt.setString(1, emp.getGender());
+            stmt.setString(2, emp.getFirst_name());
+            stmt.setString(3, emp.getLast_name());
+            stmt.setDate(4, (Date) emp.getBirth_date());
+            stmt.setDate(5, (Date) emp.getHire_date());
+            stmt.setDouble(6, emp.getSalary());
+            stmt.setString(7, emp.getBio());
+            stmt.setString(8, emp.getGoals());
+            stmt.setInt(9, emp.getDept_id());
+            stmt.setInt(10, emp.getJob_id());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
-            return rs.getLong(1);
+            return rs.getInt(1);
         } catch (SQLException e) {
             throw new RuntimeException("Error creating new employee", e);
         }

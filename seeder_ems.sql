@@ -13,7 +13,6 @@ VALUES ('Technology', 'John Wizard'),
        ('Marketing', 'Mike Stopper'),
        ('Production', 'Siri Phone');
 
-# SELECT * FROM departments;
 
 INSERT INTO employees (gender, first_name, last_name, birth_date, job_title, hire_date, salary, dept_id)
 VALUES

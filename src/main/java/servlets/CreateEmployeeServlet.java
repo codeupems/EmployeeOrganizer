@@ -25,11 +25,9 @@ public class CreateEmployeeServlet extends HttpServlet {
         String gender = request.getParameter("gender");
         String firstName = request.getParameter("first_name");
         String lastName = request.getParameter("last_name");
-        //        Doesn't work'
         Date DOB = Date.valueOf(request.getParameter("birth_date"));
-        //        Doesn't work'
         Date hireDate = Date.valueOf(request.getParameter("hire_date"));
-        Double salary = Double.valueOf(request.getParameter("salary"));
+        double salary = Double.parseDouble(request.getParameter("salary"));
         String bio = request.getParameter("bio");
         String goals = request.getParameter("goals");
         int departmentId = Integer.valueOf(request.getParameter("dept_id"));
@@ -47,7 +45,7 @@ public class CreateEmployeeServlet extends HttpServlet {
         }
 
         // create and save a new user
-        Employee emp = new Employee(gender, firstName, lastName, DOB, hireDate, salary, bio, goals, departmentId, jobId);
+        Employee emp = new Employee( gender, firstName, lastName, DOB, hireDate, salary, bio, goals, departmentId, jobId);
         DaoFactory.empListDao().insert(emp);
         response.sendRedirect("/registeremployee");
     }

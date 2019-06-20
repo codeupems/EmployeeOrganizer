@@ -20,7 +20,7 @@
 	{
 		var perpage = document.getElementById('perpage');
 		self.name = 'fooidx' + perpage.selectedIndex;
-	}
+	};
 
 	onload = function()
 	{

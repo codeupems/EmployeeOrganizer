@@ -24,8 +24,8 @@
             <label for="gender">What is your Gender?</label>
             <select class="custom-select my-1 mr-sm-2" id="gender" name="gender" required>
                 <option selected>Choose...</option>
-                <option value="1">Male</option>
-                <option value="2">Female</option>
+                <option value="M">Male</option>
+                <option value="F">Female</option>
              </select>
         </div>
         <div class="form-group">
@@ -38,15 +38,15 @@
         </div>
         <div class="form-group">
             <label for="birth_date">Birthday</label>
-            <input id="birth_date" name="birth_date" class="form-control" type="number" required>
+            <input id="birth_date" name="birth_date" class="form-control" type="date" placeholder="YYYMMDD" required>
         </div>
         <div class="form-group">
             <label for="hire_date">Hire Date</label>
-            <input id="hire_date" name="hire_date" class="form-control" type="number" required>
+            <input id="hire_date" name="hire_date" class="form-control" type="date" placeholder="YYYMMDD" required>
         </div>
         <div class="form-group">
             <label for="salary">Salary</label>
-            <input id="salary" name="salary" class="form-control" type="number" required>
+            <input id="salary" name="salary" class="form-control" type="text" placeholder="Enter current salary" required>
         </div>
         <div class="form-group">
             <label for="bio">Bio</label>
@@ -54,7 +54,7 @@
         </div>
         <div class="form-group">
             <label for="goals">Goals</label>
-            <input id="goals" name="goals" class="form-control" type="text" required>
+            <input id="goals" name="goals" class="form-control" type="text" placeholder="Enter you're goals..." required>
         </div>
         <div class="form-group">
             <label for="dept_id">Department ID</label>
