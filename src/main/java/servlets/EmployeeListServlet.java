@@ -60,9 +60,9 @@ public class EmployeeListServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request,
                          HttpServletResponse response) throws ServletException, IOException {
-        System.out.println(" doeget started");
+        System.out.println(" do get started");
 
-        int perPage = 12;
+        int perPage = 6;
         int pageNum = 1;
         System.out.printf("get request hit with following parameters: %s %s %n",
                 request.getAttribute("pagenum"), request.getParameter("perpage"));

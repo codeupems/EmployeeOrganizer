@@ -43,7 +43,8 @@ public class EmployeesDao implements Employees {
         }
 
     }
-    public List<Employee> all(int perPage, int pageNum){
+
+    public List<Employee> all(int perPage, int pageNum) {
         List<Employee> employeesList = new ArrayList<Employee>();
         System.out.println("perpage starts at " + perPage);
         try {
@@ -51,15 +52,46 @@ public class EmployeesDao implements Employees {
             //perPage-=2;
             System.out.println("perpage before query string = " + perPage);
 
-            String query = String.format("SELECT * FROM employees limit %d offset %d", perPage ,
-                    (pageNum * perPage)-perPage);
+            String query = String.format("SELECT * FROM employees limit %d offset %d", perPage,
+                    (pageNum * perPage) - perPage);
+            System.out.println(query);
+            ResultSet rs = stmt.executeQuery(query);
+            while (rs.next()) {
+                Employee emp = new Employee();
+                emp.setId(rs.getInt("id"));
+                emp.setGender(rs.getString("gender"));
+                emp.setFirst_name(rs.getString("first_name"));
+                emp.setLast_name(rs.getString("last_name"));
+                emp.setBirth_date(rs.getDate("birth_date"));
+                emp.setHire_date(rs.getDate("hire_date"));
+
+                employeesList.add(emp);
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+        return employeesList;
+    }
+
+    public List<Employee> all(){
+        List<Employee> employeesList = new ArrayList<Employee>();
+//        System.out.println("perpage starts at " + perPage);
+        try {
+            Statement stmt = connection.createStatement();
+            //perPage-=2;
+//            System.out.println("perpage before query string = " + perPage);
+
+            String query = String.format("SELECT * FROM employees ");
             System.out.println(query);
             ResultSet rs = stmt.executeQuery(query);
             while(rs.next()){
                 Employee emp = new Employee();
                 emp.setFirst_name(rs.getString("first_name"));
                 emp.setLast_name(rs.getString("last_name"));
-                emp.setEmp_no(rs.getInt("emp_no"));
+                emp.setId(rs.getInt("id"));
                 emp.setGender(rs.getString("gender"));
                 emp.setBirth_date(rs.getDate("birth_date"));
                 emp.setHire_date(rs.getDate("hire_date"));
@@ -75,40 +107,41 @@ public class EmployeesDao implements Employees {
         return employeesList;
     }
 
-    public List<Employee> search(String searchQuery){
+
+    public List<Employee> search(String searchQuery) {
         System.out.println("search started");
         List<Employee> employeesList = new ArrayList<Employee>();
         String sQFirst = "";
         String sQSecond = "";
         String[] spltQuery = searchQuery.split(" ");
-        if (spltQuery.length >1) {
-             sQFirst = spltQuery[0];
-             sQSecond = spltQuery[1];
-        }else {
-             sQFirst = spltQuery[0];
-             sQSecond = "";
+        if (spltQuery.length > 1) {
+            sQFirst = spltQuery[0];
+            sQSecond = spltQuery[1];
+        } else {
+            sQFirst = spltQuery[0];
+            sQSecond = "";
         }
         String formatQuery =
-                "SELECT * FROM employees where first_name like '%"+ sQFirst+ "%' and " +
-                        "last_name like '%" + sQSecond+"%'";
+                "SELECT * FROM employees where first_name like '%" + sQFirst + "%' and " +
+                        "last_name like '%" + sQSecond + "%'";
 
         try {
 
             System.out.println(formatQuery);
             Statement stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery(formatQuery);
-            while(rs.next()){
+            while (rs.next()) {
                 Employee emp = new Employee();
                 emp.setFirst_name(rs.getString("first_name"));
                 System.out.println(emp.getFirst_name());
                 emp.setLast_name(rs.getString("last_name"));
                 System.out.println(emp.getLast_name());
-                emp.setEmp_no(rs.getInt("emp_no"));
-                System.out.println(emp.getEmp_no());
+                emp.setId(rs.getInt("id"));
+                System.out.println(emp.getId());
                 employeesList.add(emp);
 
             }
-        }catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return employeesList;
@@ -116,6 +149,27 @@ public class EmployeesDao implements Employees {
 
     @Override
     public long insert(Employee emp) {
-        return 0;
+        String query = "INSERT INTO employees(id, gender, first_name, last_name, birth_date, hire_date, salary," +
+                " bio, goals, dept_id, job_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+            stmt.setInt(1, emp.getId());
+            stmt.setString(2, emp.getGender());
+            stmt.setString(3, emp.getFirst_name());
+            stmt.setString(4, emp.getLast_name());
+            stmt.setDate(5, (Date) emp.getBirth_date());
+            stmt.setDate(6, (Date) emp.getHire_date());
+            stmt.setDouble(7, emp.getSalary());
+            stmt.setString(8, emp.getBio());
+            stmt.setString(9, emp.getGoals());
+            stmt.setInt(10, emp.getDept_id());
+            stmt.setInt(11, emp.getJob_id());
+            stmt.executeUpdate();
+            ResultSet rs = stmt.getGeneratedKeys();
+            rs.next();
+            return rs.getLong(1);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error creating new employee", e);
+        }
     }
 }
