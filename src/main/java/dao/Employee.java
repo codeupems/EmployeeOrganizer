@@ -3,12 +3,50 @@ package dao;
 import java.util.*;
 
 public class Employee {
-    private int emp_no;
-    private Date birth_date;
+    private int id;
+    private String gender;
     private String first_name;
     private String last_name;
-    private String gender;
+    private Date birth_date;
     private Date hire_date;
+    private double salary;
+    private String bio;
+    private String goals;
+    private int dept_id;
+    private int job_id;
+    private String manager;
+    private String dept_name;
+    private String job_title;
+    private String email;
+
+    public Employee(int id, String gender, String first_name, String last_name, Date birth_date, Date hire_date,
+                    double salary, String bio, String goals, int dept_id, int job_id) {
+        this.id = id;
+        this.gender = gender;
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.birth_date = birth_date;
+        this.hire_date = hire_date;
+        this.salary = salary;
+        this.bio = bio;
+        this.goals = goals;
+        this.dept_id = dept_id;
+        this.job_id = job_id;
+    }
+    public Employee( String gender, String first_name, String last_name, Date birth_date, Date hire_date,
+                     double salary, String bio, String goals, int dept_id, int job_id) {
+        this.gender = gender;
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.birth_date = birth_date;
+        this.hire_date = hire_date;
+        this.salary = salary;
+        this.bio = bio;
+        this.goals = goals;
+        this.dept_id = dept_id;
+        this.job_id = job_id;
+    }
+
 
     public Employee() {
 
@@ -24,14 +62,15 @@ public class Employee {
         this.hire_date = hire_date;
     }
 
+
     // getters
 
-    public int getEmp_no() {
-        return emp_no;
+    public int getId() {
+        return id;
     }
 
-    public Date getBirth_date() {
-        return birth_date;
+    public String getGender() {
+        return gender;
     }
 
     public String getFirst_name() {
@@ -42,23 +81,59 @@ public class Employee {
         return last_name;
     }
 
-    public String getGender() {
-        return gender;
+    public Date getBirth_date() {
+        return birth_date;
     }
 
     public Date getHire_date() {
         return hire_date;
     }
 
+    public double getSalary() {
+        return salary;
+    }
+
+    public String getBio() {
+        return bio;
+    }
+
+    public String getGoals() {
+        return goals;
+    }
+
+    public int getDept_id() {
+        return dept_id;
+    }
+
+    public int getJob_id() {
+        return job_id;
+    }
+
+    public String getManager() {
+        return manager;
+    }
+
+    public String getDept_name() {
+        return dept_name;
+    }
+
+    public String getJob_title() {
+        return job_title;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
     // setters
 
 
-    public void setEmp_no(int emp_no) {
-        this.emp_no = emp_no;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setBirth_date(Date birth_date) {
-        this.birth_date = birth_date;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public void setFirst_name(String first_name) {
@@ -69,12 +144,48 @@ public class Employee {
         this.last_name = last_name;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public void setBirth_date(Date birth_date) {
+        this.birth_date = birth_date;
     }
 
     public void setHire_date(Date hire_date) {
         this.hire_date = hire_date;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
+    }
+
+    public void setGoals(String goals) {
+        this.goals = goals;
+    }
+
+    public void setDept_id(int dept_id) {
+        this.dept_id = dept_id;
+    }
+
+    public void setJob_id(int job_id) {
+        this.job_id = job_id;
+    }
+
+    public void setManager(String manager) {
+        this.manager = manager;
+    }
+
+    public void setDept_name(String dept_name) {
+        this.dept_name = dept_name;
+    }
+
+    public void setJob_title(String job_title) {
+        this.job_title = job_title;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
 

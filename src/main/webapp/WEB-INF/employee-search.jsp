@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: johndeleon
@@ -18,10 +19,16 @@
     <form class="form-inline search-form">
         <input class="form-control mr-sm-5 search-bar-style" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 search-btn-style" type="submit">Search</button>
+
     </form>
 </nav>
+<div class="container">
+
+
+</div>
 <div>
     <%@ include file="/WEB-INF/partials/leghand.jsp" %>
 </div>
+<%--<script src="/js/main.js"></script>--%>
 </body>
 </html>

@@ -14,7 +14,7 @@ import java.io.IOException;
 public class EmployeeListServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.printf("Post request hit with following parameters: %s %s %n",
+       /* System.out.printf("Post request hit with following parameters: %s %s %n",
                 request.getParameter("pagenum"), request.getParameter("perpage"));//debug info
 //        set up vars incase none are passed
         int perPage = 6;
@@ -24,7 +24,6 @@ public class EmployeeListServlet extends HttpServlet {
         String perPageParam= request.getParameter("perpage");//since I am calling this a lot I
         // got tired of typing out the whole thing.
         if (request.getParameterMap().containsKey("perpage")) {
-
             System.out.println("perpage if started");
             int pageNumNum = Integer.parseInt( pageNumParam.split(" ")[0]) ;// split to array and
             // pull first element. This should be the current number.
@@ -37,10 +36,8 @@ public class EmployeeListServlet extends HttpServlet {
                     pageNum =1;
                 }
             }
-
         }
         if (request.getParameterMap().containsKey("pagenum")) {
-
             System.out.println("pagenum if started");
             int pageNumNum = Integer.parseInt( pageNumParam.split(" ")[0]) ;// split to array and
             // pull first element. This should be the current number.
@@ -53,23 +50,45 @@ public class EmployeeListServlet extends HttpServlet {
 //        setting the page attributes.
         request.setAttribute("perpage", perPage);
         request.setAttribute("pagenum", pageNum);
-        request.setAttribute("emps", DaoFactory.empListDao().all(perPage, pageNum));
+        request.setAttribute("emp", DaoFactory.empListDao().all(perPage, pageNum));
         request.getRequestDispatcher("WEB-INF/employees-list.jsp").forward(request, response);
-        System.out.println("do post method completed.");// debug info
+        System.out.println("do post method completed.");// debug info*/
+
+        String search = request.getParameter("search");
+        String type = request.getParameter("stype");
+
+        if(type.equals("name")){
+            request.setAttribute("emp", DaoFactory.empListDao().searchName(search));
+            System.out.println( "name if triggered");
+        }
+        if(type.equals("id")){
+            System.out.println( "id if triggered");
+            request.setAttribute("emp", DaoFactory.empListDao().searchID(search));
+
+        }
+        if(type.equals("dept")){
+            request.setAttribute("emp", DaoFactory.empListDao().searchDept(search));
+            System.out.println( "dept if triggered");
+        }
+
+
+        request.getRequestDispatcher("WEB-INF/employees-list.jsp").forward(request, response);
+
     }
 
     protected void doGet(HttpServletRequest request,
                          HttpServletResponse response) throws ServletException, IOException {
         System.out.println(" do get started");
 
-        int perPage = 6;
-        int pageNum = 1;
+        //int perPage = 6;
+        //int pageNum = 1;
         System.out.printf("get request hit with following parameters: %s %s %n",
                 request.getAttribute("pagenum"), request.getParameter("perpage"));
 
-        request.setAttribute("perpage",perPage);
-        request.setAttribute("pagenum", pageNum);
-        request.setAttribute("emps", DaoFactory.empListDao().all(perPage, pageNum));
+        //request.setAttribute("perpage",perPage);
+        // request.setAttribute("pagenum", pageNum);
+
+        request.setAttribute("emp", DaoFactory.empListDao().all());
         request.getRequestDispatcher("WEB-INF/employees-list.jsp").forward(request, response);
 
         System.out.printf("get request completed with following parameters: pagenum: %s perpage: %s %n",

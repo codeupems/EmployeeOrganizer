@@ -22,3 +22,7 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
+<<<<<<< HEAD:target/classes/main/webapp/WEB-INF/partials/leghand.jsp
+=======
+
+>>>>>>> master:src/main/webapp/WEB-INF/partials/footer.jsp
