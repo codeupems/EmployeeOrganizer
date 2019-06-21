@@ -29,13 +29,14 @@
 	};
 
 </script>
-<div class="container">
+<%--< class="container">--%>
     <h1>Employees List</h1>
     <form action="/employees-list" method="post">
+
         <div class="float-left clear-fix col-12">
-            <div class="col-3 float-left m-3 ">
-                <label for="perpage">Show how many per page?</label>
-                <select id="perpage" class="form-control form-control-sm " name="perpage"
+            <div class="col-3 float-left m-3 perpage-div">
+                <label class="perpage-label" for="perpage">Per page?</label>
+                <select id="perpage" class="form-control form-control-sm nav-style btn-style" name="perpage"
                         onchange="options[selectedIndex].value&&self.location.reload(true)">
 
                     <option value="6">6</option>
@@ -45,33 +46,36 @@
                     <option value="30">30</option>
                 </select>
             </div>
+        </div>
+    </form>
 
             <%-- buttons to move page forard or backward.--%>
-            <div class="col-6 float-right m-3 form-row">
+        <form action="/employees-list" method="post">
 
-                <button class=" btn btn-light float-right" type="submit" name="pagenum"
+        <div class="col-6 float-right m-3 form-row page-buttons">
+
+                <button class=" btn btn-light float-right nav-style btn-style" type="submit" name="pagenum"
                         value="${pagenum} -1">Previous
                     Page</button>
-                <button class=" btn btn-light float-right" name="pagenum" value=${pagenum}>
-                    Page Number <span class="badge badge-light">${pagenum}</span>
+                <button class=" btn btn-light float-right nav-style btn-style" name="pagenum" value=${pagenum}>
+                    Page <span class="badge">${pagenum}</span>
                 </button>
-                <button class=" btn btn-light float-right" type="submit" name="pagenum"
+                <button class=" btn btn-light float-right nav-style btn-style" type="submit" name="pagenum"
                        value="${pagenum} +1" >Next Page
                 </button>
             </div>
-        </div>
-
     </form>
+
     <div class="col-12">
         <c:forEach var="emp" items="${emps}">
 
-            <div class="card float-left m-3 bg-light" style="width: 20rem;">
+            <div class="card float-left m-3 nav-style" style="width: 20rem;">
                 <img src="https://robohash.org/${emp.first_name}?set=set5" class="card-img-top"
                      alt="...">
-                <div class="card-body bg_white">
+                <div class="card-body nav-style">
                     <h5 class="card-title"><c:out value = "${emp.first_name} ${emp.last_name}"/></h5>
                     <p class="card-text">ID:  <c:out value="${emp.emp_no}" /></p>
-                    <a href="#" class="btn btn-primary disabled">View Employee</a>
+                    <a href="#" class="btn btn-primary disabled nav-style">View Employee</a>
                 </div>
             </div>
 
@@ -80,7 +84,7 @@
 
 </div>
 <div>
-<%@ include file="/WEB-INF/partials/footer.jsp" %>
+<%@ include file="/WEB-INF/partials/leghand.jsp" %>
 </div>
 </body>
 </html>

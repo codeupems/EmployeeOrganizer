@@ -18,5 +18,6 @@
 </h1>
 
 <%@ include file="WEB-INF/partials/leghand.jsp" %>
+<%--changed something--%>
 </body>
 </html>
