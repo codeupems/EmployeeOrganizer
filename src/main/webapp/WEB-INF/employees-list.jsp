@@ -17,7 +17,7 @@
 <script type="text/javascript">
 
 </script>
-<%--< class="container">--%>
+<div class="container">
     <h1>Employees List</h1>
 
     <%--    <form action="/employees-list" method="post">--%>
@@ -102,10 +102,9 @@
         </c:forEach>
     </div>
 
-<%--</div>--%>
+</div>
 <div>
-<%@ include file="/WEB-INF/partials/leghand.jsp" %>
-
+    <%@include file="partials/leghand.jsp" %>
 </div>
 <script src="/"></script>
 </body>

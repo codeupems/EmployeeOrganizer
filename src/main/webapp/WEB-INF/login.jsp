@@ -29,7 +29,7 @@
     </form>
 </div>
 
-<jsp:include page="/WEB-INF/partials/footer.jsp" />
+<%@include file="partials/leghand.jsp" %>
 
 </body>
 </html>

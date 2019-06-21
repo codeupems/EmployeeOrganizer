@@ -45,6 +45,6 @@
 <script>
 	<%@ include file="/WEB-INF/js/jobTitleChoice.js"%>
 </script>
-<%@include file="partials/footer.jsp" %>
+<%@include file="partials/leghand.jsp" %>
 </body>
 </html>

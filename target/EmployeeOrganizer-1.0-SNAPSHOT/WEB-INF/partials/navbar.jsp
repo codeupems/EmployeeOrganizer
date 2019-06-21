@@ -12,18 +12,19 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link nav-li" href="/">Home</a>
+
+        <ul class="navbar-nav" id="topnav">
+            <li class="nav-item" id="home">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item ">
-                <a class="nav-link nav-li" href="/employees-list">Employee List</a>
+            <li class="nav-item" id="list">
+                <a class="nav-link" href="/employees-list">Employee List</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link nav-li" href="/employee-search">Employee Search</a>
+            <li class="nav-item" id="reguser">
+                <a class="nav-link"  href="/registeruser">Register User</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link nav-li" href="/login" >Login</a>
+            <li class="nav-item" id="login">
+                <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">login</a>
             </li>
         </ul>
     </div>

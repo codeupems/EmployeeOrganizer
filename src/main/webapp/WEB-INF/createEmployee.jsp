@@ -74,6 +74,7 @@
     </form>
 </div>
 
-<%@ include file="/WEB-INF/partials/footer.jsp" %>
+<%@include file="partials/leghand.jsp" %>
+
 </body>
 </html>
