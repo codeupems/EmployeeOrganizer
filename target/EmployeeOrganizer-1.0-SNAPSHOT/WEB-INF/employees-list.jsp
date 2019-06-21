@@ -99,8 +99,7 @@
                 <div class="card-body bg_white">
                     <h5 class="card-title"><c:out value = "${emp.first_name} ${emp.last_name}"/></h5>
                     <p class="card-text">ID:  <c:out value="${emp.id}" /></p>
-                    <button class="btn btn-primary " name="id" type="submit"
-                            value="${emp.emp_no}"
+                    <a href="#" class="btn btn-primary disabled">View Employee</a>
                 </div>
             </div>
 
