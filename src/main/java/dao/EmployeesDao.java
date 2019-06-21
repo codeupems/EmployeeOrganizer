@@ -12,8 +12,6 @@ public class EmployeesDao implements Employees {
     /*
      *
      * Create a class named dao.EmployeesDao that implements the Ads interface
-
-
      * This class should have a private instance property named connection of type Connection that is
      * initialized in the constructor. Define your constructor so that it accepts an instance of
      * your Config class so that it can obtain the database credentials.
@@ -30,7 +28,7 @@ public class EmployeesDao implements Employees {
         Employee emp = DaoFactory.empListDao().allInfo(1);
         System.out.println(
                 "Emp ID = " +
-                        emp.getEmp_no() +
+                        emp.getId() +
                         "\n First name = " +
                         emp.getFirst_name() +
                         "\n Last name = " +
@@ -82,7 +80,7 @@ public class EmployeesDao implements Employees {
                 Employee emp = new Employee();
                 emp.setFirst_name(rs.getString("first_name"));
                 emp.setLast_name(rs.getString("last_name"));
-                emp.setEmp_no(rs.getInt("id"));
+                emp.setId(rs.getInt("id"));
                 emp.setGender(rs.getString("gender"));
                 emp.setBirth_date(rs.getDate("birth_date"));
                 emp.setHire_date(rs.getDate("hire_date"));
@@ -193,8 +191,8 @@ public class EmployeesDao implements Employees {
                 //System.out.println(emp.getFirst_name());
                 emp.setLast_name(rs.getString("last_name"));
                 //System.out.println(emp.getLast_name());
-                emp.setEmp_no(rs.getInt("id"));
-                //System.out.println(emp.getEmp_no());
+                emp.setId(rs.getInt("id"));
+                //System.out.println(emp.getId()());
                 emp.setTitle(rs.getString("job_title"));
                 emp.setHire_date(rs.getDate("hire_date"));
             }
@@ -265,8 +263,8 @@ public class EmployeesDao implements Employees {
                 System.out.println(emp.getFirst_name());
                 emp.setLast_name(rs.getString("last_name"));
                 System.out.println(emp.getLast_name());
-                emp.setEmp_no(rs.getInt("id"));
-                System.out.println(emp.getEmp_no());
+                emp.setId(rs.getInt("id"));
+                System.out.println(emp.getId());
                 employeesList.add(emp);
 
             }

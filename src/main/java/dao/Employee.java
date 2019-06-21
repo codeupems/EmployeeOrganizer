@@ -3,7 +3,7 @@ package dao;
 import java.util.*;
 
 public class Employee {
-    private int emp_no;
+    private int id;
     private Date birth_date;
     private String first_name;
     private String last_name;
@@ -32,8 +32,8 @@ public class Employee {
 
     // getters
 
-    public int getEmp_no() {
-        return emp_no;
+    public int getId() {
+        return id;
     }
 
     public Date getBirth_date() {
@@ -83,8 +83,8 @@ public class Employee {
     // setters
 
 
-    public void setEmp_no(int emp_no) {
-        this.emp_no = emp_no;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setBirth_date(Date birth_date) {
