@@ -12,8 +12,6 @@ public class EmployeesDao implements Employees {
     /*
      *
      * Create a class named dao.EmployeesDao that implements the Ads interface
-
-
      * This class should have a private instance property named connection of type Connection that is
      * initialized in the constructor. Define your constructor so that it accepts an instance of
      * your Config class so that it can obtain the database credentials.
@@ -27,7 +25,10 @@ public class EmployeesDao implements Employees {
 
 
     public static void main(String[] args) {
-        DaoFactory.empListDao().search("Bezalel");
+        DaoFactory.empListDao().searchName("Bezalel");
+        DaoFactory.empListDao().searchID("Bezalel");
+        DaoFactory.empListDao().searchDept("Bezalel");
+
     }
 
     public EmployeesDao() {
@@ -51,7 +52,7 @@ public class EmployeesDao implements Employees {
             //perPage-=2;
             System.out.println("perpage before query string = " + perPage);
 
-            String query = String.format("SELECT * FROM ems_db.employees limit %d offset %d", perPage ,
+            String query = String.format("SELECT * FROM employees limit %d offset %d", perPage ,
                     (pageNum * perPage)-perPage);
             System.out.println(query);
             ResultSet rs = stmt.executeQuery(query);
@@ -78,54 +79,100 @@ public class EmployeesDao implements Employees {
     public List<Employee> all(){
         List<Employee> employeesList = new ArrayList<Employee>();
 //        System.out.println("perpage starts at " + perPage);
-        try {
-            Statement stmt = connection.createStatement();
-            //perPage-=2;
-//            System.out.println("perpage before query string = " + perPage);
 
-            String query = String.format("SELECT * FROM ems_db.employees ");
-            System.out.println(query);
-            ResultSet rs = stmt.executeQuery(query);
-            while(rs.next()){
-                Employee emp = new Employee();
-                emp.setId(rs.getInt("id"));
-                emp.setGender(rs.getString("gender"));
-                emp.setFirst_name(rs.getString("first_name"));
-                emp.setLast_name(rs.getString("last_name"));
-                emp.setBirth_date(rs.getDate("birth_date"));
-                emp.setHire_date(rs.getDate("hire_date"));
 
-                employeesList.add(emp);
+        String formatQuery = String.format("SELECT * FROM employees ");
+        employeesList= processEmpList(formatQuery);
 
-            }
-        }catch(SQLException e){
-            e.printStackTrace();
-        }
 
 
         return employeesList;
     }
 
-    public List<Employee> search(String searchQuery){
-        System.out.println("search started");
-        List<Employee> employeesList = new ArrayList<Employee>();
+    @Override
+    public List<Employee> searchName(String searchQuery){
+        System.out.println("search by name started");
+        List<Employee> employeesList;
         String sQFirst = "";
         String sQSecond = "";
         String[] spltQuery = searchQuery.split(" ");
         if (spltQuery.length >1) {
-             sQFirst = spltQuery[0];
-             sQSecond = spltQuery[1];
+            sQFirst = spltQuery[0];
+            sQSecond = spltQuery[1];
         }else {
-             sQFirst = spltQuery[0];
-             sQSecond = "";
+            sQFirst = spltQuery[0];
+            sQSecond = "";
         }
         String formatQuery =
-                "SELECT * FROM ems_db.employees where first_name like '%"+ sQFirst+ "%' and " +
+                "SELECT * FROM employees where first_name like '%"+ sQFirst+ "%' and " +
                         "last_name like '%" + sQSecond+"%'";
 
-        try {
+        employeesList = processEmpList(formatQuery);
 
-            System.out.println(formatQuery);
+        return employeesList;
+    }
+
+    @Override
+    public List<Employee> searchID(String searchQuery) {
+        System.out.println("search by id started");
+        List<Employee> employeesList = new ArrayList<>();
+
+
+        String formatQuery =
+                "SELECT * FROM employees where id = " + searchQuery;
+        employeesList= processEmpList(formatQuery);
+
+        return employeesList;
+    }
+
+    @Override
+    public List<Employee> searchDept(String searchQuery) {
+        System.out.println("search by department started");
+        int deptID=0;
+        switch (searchQuery.toLowerCase()){
+            case "technology":
+                deptID = 1;
+                break;
+            case "hr":
+                deptID = 2;
+                break;
+            case "finance":
+                deptID = 3;
+                break;
+            case "marketing":
+                deptID = 4;
+                break;
+            case "production":
+                deptID = 5;
+                break;
+            default:
+                ;
+
+        }
+        List<Employee> employeesList;
+        String formatQuery =
+                "SELECT * FROM employees where dept_id = " + deptID;
+        employeesList= processEmpList(formatQuery);
+
+
+        return employeesList;
+
+    }
+
+    //    private static void populateUsersTable(){
+//        List<Employee> employeeList = DaoFactory.empListDao().all();
+//    }
+
+    @Override
+    public long insert(Employee emp) {
+        return 0;
+    }
+
+    private List<Employee> processEmpList(String formatQuery){
+
+        List<Employee> employeesList = new ArrayList<Employee>();
+        System.out.println(formatQuery);
+        try {
             Statement stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery(formatQuery);
             while(rs.next()){
@@ -143,14 +190,5 @@ public class EmployeesDao implements Employees {
             e.printStackTrace();
         }
         return employeesList;
-    }
-
-    private static void populateUsersTable(){
-        List<Employee> employeeList = DaoFactory.empListDao().all();
-    }
-
-    @Override
-    public long insert(Employee emp) {
-        return 0;
     }
 }
