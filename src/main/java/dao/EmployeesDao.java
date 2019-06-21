@@ -51,7 +51,7 @@ public class EmployeesDao implements Employees {
             //perPage-=2;
             System.out.println("perpage before query string = " + perPage);
 
-            String query = String.format("SELECT * FROM employees limit %d offset %d", perPage ,
+            String query = String.format("SELECT * FROM ems_db.employees limit %d offset %d", perPage ,
                     (pageNum * perPage)-perPage);
             System.out.println(query);
             ResultSet rs = stmt.executeQuery(query);
@@ -59,7 +59,7 @@ public class EmployeesDao implements Employees {
                 Employee emp = new Employee();
                 emp.setFirst_name(rs.getString("first_name"));
                 emp.setLast_name(rs.getString("last_name"));
-                emp.setEmp_no(rs.getInt("emp_no"));
+                emp.setId(rs.getInt("id"));
                 emp.setGender(rs.getString("gender"));
                 emp.setBirth_date(rs.getDate("birth_date"));
                 emp.setHire_date(rs.getDate("hire_date"));
@@ -103,8 +103,8 @@ public class EmployeesDao implements Employees {
                 System.out.println(emp.getFirst_name());
                 emp.setLast_name(rs.getString("last_name"));
                 System.out.println(emp.getLast_name());
-                emp.setEmp_no(rs.getInt("emp_no"));
-                System.out.println(emp.getEmp_no());
+                emp.setId(rs.getInt("id"));
+                System.out.println(emp.getId());
                 employeesList.add(emp);
 
             }
