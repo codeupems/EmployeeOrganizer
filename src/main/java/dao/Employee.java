@@ -14,6 +14,10 @@ public class Employee {
     private String goals;
     private int dept_id;
     private int job_id;
+    private String manager;
+    private String dept_name;
+    private String job_title;
+    private String email;
 
     public Employee(int id, String gender, String first_name, String last_name, Date birth_date, Date hire_date,
                     double salary, String bio, String goals, int dept_id, int job_id) {
@@ -105,6 +109,21 @@ public class Employee {
         return job_id;
     }
 
+    public String getManager() {
+        return manager;
+    }
+
+    public String getDept_name() {
+        return dept_name;
+    }
+
+    public String getJob_title() {
+        return job_title;
+    }
+
+    public String getEmail() {
+        return email;
+    }
 
     // setters
 
@@ -151,6 +170,22 @@ public class Employee {
 
     public void setJob_id(int job_id) {
         this.job_id = job_id;
+    }
+
+    public void setManager(String manager) {
+        this.manager = manager;
+    }
+
+    public void setDept_name(String dept_name) {
+        this.dept_name = dept_name;
+    }
+
+    public void setJob_title(String job_title) {
+        this.job_title = job_title;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
 
