@@ -14,6 +14,9 @@
 </head>
 <body>
 <%@ include file="/WEB-INF/partials/navbar.jsp" %>
+
+
+
 <script type="text/javascript">
 
 	// no longer used
@@ -86,6 +89,7 @@
                    name="search"
                    id="search"
                    aria-label="Search">
+
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
     </nav>
@@ -97,14 +101,13 @@
                 <img src="https://robohash.org/${emp.first_name}?set=set5" class="card-img-top"
                      alt="...">
                 <div class="card-body bg_white">
+
                     <h5 class="card-title"><c:out value="${emp.first_name} ${emp.last_name}"/></h5>
                     <p class="card-text">ID: <c:out value="${emp.id}"/></p>
                     <form action="/employee-info" method="post">
 
                         <button class="btn btn-primary " name="id" type="submit"
-                                value="${emp.id}"
-                        >View Employee
-                        </button>
+                                value="${emp.id}">View Employee</button>
                     </form>
                 </div>
             </div>
