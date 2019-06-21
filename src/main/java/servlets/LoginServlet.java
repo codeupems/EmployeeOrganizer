@@ -2,7 +2,8 @@ package servlets;
 
 import dao.DaoFactory;
 import dao.User;
-import org.mindrot.jbcrypt.BCrypt;
+import utils.Password;
+//import org.mindrot.jbcrypt.BCrypt; // Not needed but good backup
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,10 +12,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "controllers.LoginServlet", urlPatterns = "/login")
+@WebServlet(name = "LoginServlet", urlPatterns = "/login")
 public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (request.getSession().getAttribute("user") != null) {
+
+            //            What is the profile URL?
             response.sendRedirect("/profile");
             return;
         }
@@ -24,7 +27,6 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        String hash = BCrypt.hashpw(password, BCrypt.gensalt());
         User user = DaoFactory.getUsersDao().findByUsername(username);
 
         if (user == null) {
@@ -32,11 +34,12 @@ public class LoginServlet extends HttpServlet {
             return;
         }
 
-        boolean passwordsMatch = BCrypt.checkpw(password, hash);
-//        boolean validAttempt = password.equals(user.getPassword());
+        boolean validAttempt = Password.check(password, user.getPassword());
 
-        if (passwordsMatch) {
+        if (validAttempt) {
             request.getSession().setAttribute("user", user);
+
+            //            What is the profile URL?
             response.sendRedirect("/profile");
         } else {
             response.sendRedirect("/login");
