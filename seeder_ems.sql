@@ -44,6 +44,7 @@ VALUES
 
 INSERT INTO users (username, password, email, emp_id)
 VALUES
+
        ('Myktank', 'codeup', 'Myktank@live.com', 1),
        ('Johnwizard', 'codeup', 'Johnwizard@live.com', 2),
        ('ElleA', 'codeup', 'ElleA@live.com', 3),
@@ -54,6 +55,7 @@ VALUES
        ('JoshB', 'codeup', 'JoshB@live.com', 8),
        ('Bobwill', 'codeup', 'Bobwill@live.com', 9),
        ('Siri', 'codeup', 'Siri@live.com', 10);
+
 
 # SELECT * FROM users;
 

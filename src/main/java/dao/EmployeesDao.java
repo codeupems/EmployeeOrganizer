@@ -75,6 +75,37 @@ public class EmployeesDao implements Employees {
         return employeesList;
     }
 
+    public List<Employee> all(){
+        List<Employee> employeesList = new ArrayList<Employee>();
+//        System.out.println("perpage starts at " + perPage);
+        try {
+            Statement stmt = connection.createStatement();
+            //perPage-=2;
+//            System.out.println("perpage before query string = " + perPage);
+
+            String query = String.format("SELECT * FROM ems_db.employees ");
+            System.out.println(query);
+            ResultSet rs = stmt.executeQuery(query);
+            while(rs.next()){
+                Employee emp = new Employee();
+                emp.setId(rs.getInt("id"));
+                emp.setGender(rs.getString("gender"));
+                emp.setFirst_name(rs.getString("first_name"));
+                emp.setLast_name(rs.getString("last_name"));
+                emp.setBirth_date(rs.getDate("birth_date"));
+                emp.setHire_date(rs.getDate("hire_date"));
+
+                employeesList.add(emp);
+
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+
+
+        return employeesList;
+    }
+
     public List<Employee> search(String searchQuery){
         System.out.println("search started");
         List<Employee> employeesList = new ArrayList<Employee>();
@@ -112,6 +143,10 @@ public class EmployeesDao implements Employees {
             e.printStackTrace();
         }
         return employeesList;
+    }
+
+    private static void populateUsersTable(){
+        List<Employee> employeeList = DaoFactory.empListDao().all();
     }
 
     @Override

@@ -1,3 +1,5 @@
+create database ems_db;
+
 use ems_db;
 
 DROP TABLE IF EXISTS departments;
