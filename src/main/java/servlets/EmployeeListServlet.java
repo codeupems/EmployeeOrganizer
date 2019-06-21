@@ -78,7 +78,7 @@ public class EmployeeListServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request,
                          HttpServletResponse response) throws ServletException, IOException {
-        System.out.println(" doeget started");
+        System.out.println(" do get started");
 
         //int perPage = 6;
         //int pageNum = 1;

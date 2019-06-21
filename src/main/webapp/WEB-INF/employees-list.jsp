@@ -14,27 +14,12 @@
 </head>
 <body>
 <%@ include file="/WEB-INF/partials/navbar.jsp" %>
-
-
-
 <script type="text/javascript">
 
-	// no longer used
-	/*	onunload = function()
-        {
-            var perpage = document.getElementById('perpage');
-            self.name = 'fooidx' + perpage.selectedIndex;
-        };
-
-        onload = function()
-        {
-            var idx, perpage = document.getElementById('perpage');
-            perpage.selectedIndex = (idx = self.name.split('fooidx')) ?	idx[1] : 0;
-        };*/
-
 </script>
-<div class="container">
+<%--< class="container">--%>
     <h1>Employees List</h1>
+
     <%--    <form action="/employees-list" method="post">--%>
     <%--        <div class="float-left clear-fix col-12">--%>
     <%--            <div class="col-3 float-left m-3 ">--%>
@@ -97,16 +82,18 @@
     <div class="col-12">
         <c:forEach var="emp" items="${emp}">
 
-            <div class="card float-left m-3 bg-light" style="width: 20rem;">
+            <div class="card float-left m-3 nav-style" style="width: 20rem;">
                 <img src="https://robohash.org/${emp.first_name}?set=set5" class="card-img-top"
                      alt="...">
-                <div class="card-body bg_white">
+                <div class="card-body nav-style">
+
+<%--                <div class="card-body nav-style">--%>
 
                     <h5 class="card-title"><c:out value="${emp.first_name} ${emp.last_name}"/></h5>
                     <p class="card-text">ID: <c:out value="${emp.id}"/></p>
                     <form action="/employee-info" method="post">
 
-                        <button class="btn btn-primary " name="id" type="submit"
+                        <button class="btn btn-primary nav-style" name="id" type="submit"
                                 value="${emp.id}">View Employee</button>
                     </form>
                 </div>
@@ -115,9 +102,10 @@
         </c:forEach>
     </div>
 
-</div>
+<%--</div>--%>
 <div>
-    <%@ include file="/WEB-INF/partials/footer.jsp" %>
+<%@ include file="/WEB-INF/partials/leghand.jsp" %>
+
 </div>
 <script src="/"></script>
 </body>
