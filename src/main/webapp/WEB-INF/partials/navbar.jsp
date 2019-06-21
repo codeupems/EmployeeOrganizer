@@ -25,6 +25,12 @@
             <li class="nav-item">
                 <a class="nav-link nav-li" href="/login" >Login</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link nav-li" href="/login" >Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link nav-li" href="/login" >Login</a>
+            </li>
         </ul>
     </div>
 </nav>
