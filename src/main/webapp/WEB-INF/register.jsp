@@ -43,7 +43,7 @@
     </form>
 </div>
 <script>
-	<%@ include file="/js/jobTitleChoice.js"%>
+	<%@ include file="/WEB-INF/js/jobTitleChoice.js"%>
 </script>
 <%@include file="partials/footer.jsp" %>
 </body>
