@@ -63,14 +63,14 @@
 
     </form>
     <div class="col-12">
-        <c:forEach var="emp" items="${emps}">
+        <c:forEach var="emp" items="${emp}">
 
             <div class="card float-left m-3 bg-light" style="width: 20rem;">
                 <img src="https://robohash.org/${emp.first_name}?set=set5" class="card-img-top"
                      alt="...">
                 <div class="card-body bg_white">
                     <h5 class="card-title"><c:out value = "${emp.first_name} ${emp.last_name}"/></h5>
-                    <p class="card-text">ID:  <c:out value="${emp.emp_no}" /></p>
+                    <p class="card-text">ID:  <c:out value="${emp.id}" /></p>
                     <a href="#" class="btn btn-primary disabled">View Employee</a>
                 </div>
             </div>

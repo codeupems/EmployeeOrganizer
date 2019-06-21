@@ -120,7 +120,7 @@ public class EmployeesDao implements Employees {
              sQSecond = "";
         }
         String formatQuery =
-                "SELECT * FROM employees where first_name like '%"+ sQFirst+ "%' and " +
+                "SELECT * FROM ems_db.employees where first_name like '%"+ sQFirst+ "%' and " +
                         "last_name like '%" + sQSecond+"%'";
 
         try {

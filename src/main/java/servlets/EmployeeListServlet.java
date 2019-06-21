@@ -53,7 +53,7 @@ public class EmployeeListServlet extends HttpServlet {
 //        setting the page attributes.
         request.setAttribute("perpage", perPage);
         request.setAttribute("pagenum", pageNum);
-        request.setAttribute("emps", DaoFactory.empListDao().all(perPage, pageNum));
+        request.setAttribute("emp", DaoFactory.empListDao().all(perPage, pageNum));
         request.getRequestDispatcher("WEB-INF/employees-list.jsp").forward(request, response);
         System.out.println("do post method completed.");// debug info
     }
@@ -69,7 +69,7 @@ public class EmployeeListServlet extends HttpServlet {
 
         request.setAttribute("perpage",perPage);
         request.setAttribute("pagenum", pageNum);
-        request.setAttribute("emps", DaoFactory.empListDao().all(perPage, pageNum));
+        request.setAttribute("emp", DaoFactory.empListDao().all(perPage, pageNum));
         request.getRequestDispatcher("WEB-INF/employees-list.jsp").forward(request, response);
 
         System.out.printf("get request completed with following parameters: pagenum: %s perpage: %s %n",
