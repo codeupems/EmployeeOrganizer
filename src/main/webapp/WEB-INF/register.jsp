@@ -42,6 +42,9 @@
         <input type="submit" class="btn btn-primary btn-block">
     </form>
 </div>
-
+<script>
+	<%@ include file="/js/jobTitleChoice.js"%>
+</script>
+<%@include file="partials/footer.jsp" %>
 </body>
 </html>
