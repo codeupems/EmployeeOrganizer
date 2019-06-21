@@ -39,24 +39,49 @@
                     <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab"
                        href="#nav-bio" role="tab" aria-controls="nav-bio" aria-selected="false">
                         Personal Info</a>
-                    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
+                    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab"
+                       href="#nav-contact" role="tab" aria-controls="nav-contact"
+                       aria-selected="false">Team Members
+                    </a>
                 </div>
             </nav>
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-info" role="tabpanel"
                      aria-labelledby="nav-home-tab">
-                    <h3>Hire date: ${emp.hire_date}</h3>
-                    <h3>Title: ${emp.title}</h3>
-                    <h3>Department: ${emp.department}</h3>
-                    <h3>Manager: ${emp.manager_name}</h3>
-                    <h3>Email: ${emp.email}</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <h3>Hire date:</h3> ${emp.hire_date}
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h3>Title:</h3> ${emp.title}
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h3>Department:</h3> <p>${emp.department}</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h3>Manager:</h3> ${emp.manager_name}
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h3>Email:</h3> ${emp.email}
+                        </div>
+                    </div>
                 </div>
                 <div class="tab-pane fade" id="nav-bio" role="tabpanel"
                      aria-labelledby="nav-profile-tab">
                     <h3>Career Goal: ${emp.goals}</h3>
                     <h3>Bio: ${emp.bio}</h3>
                 </div>
-                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+                <div class="tab-pane fade" id="nav-contact" role="tabpanel"
+                     aria-labelledby="nav-contact-tab">TODO: list team members
+                </div>
             </div>
 
 

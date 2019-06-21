@@ -14,6 +14,9 @@
 </head>
 <body>
 <%@ include file="/WEB-INF/partials/navbar.jsp" %>
+
+
+
 <script type="text/javascript">
 
     // no longer used
