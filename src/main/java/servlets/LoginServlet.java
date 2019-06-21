@@ -18,7 +18,7 @@ public class LoginServlet extends HttpServlet {
         if (request.getSession().getAttribute("user") != null) {
 
             //            What is the profile URL?
-            response.sendRedirect("/profile");
+            response.sendRedirect("/employees-list");
             return;
         }
         request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
@@ -40,7 +40,7 @@ public class LoginServlet extends HttpServlet {
             request.getSession().setAttribute("user", user);
 
             //            What is the profile URL?
-            response.sendRedirect("/profile");
+            response.sendRedirect("/employees-list");
         } else {
             response.sendRedirect("/login");
         }
