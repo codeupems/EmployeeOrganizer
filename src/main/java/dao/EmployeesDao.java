@@ -47,6 +47,7 @@ public class EmployeesDao implements Employees {
                         emp.getGoals()+
                         "\n Bio = "+
                         emp.getBio()
+
         );
     }
 
@@ -197,6 +198,7 @@ public class EmployeesDao implements Employees {
                 emp.setHire_date(rs.getDate("hire_date"));
                 emp.setGoals(rs.getString("goals"));
                 emp.setBio(rs.getString("bio"));
+                emp.setJob_id((rs.getInt("job_id")));
             }
 
             userInfo(id, emp);
