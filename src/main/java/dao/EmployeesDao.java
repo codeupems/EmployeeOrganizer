@@ -26,29 +26,9 @@ public class EmployeesDao implements Employees {
 
     public static void main(String[] args) {
         Employee emp = DaoFactory.empListDao().allInfo(1);
-        System.out.println(
-                "Emp ID = " +
-                        emp.getId() +
-                        "\n First name = " +
-                        emp.getFirst_name() +
-                        "\n Last name = " +
-                        emp.getLast_name() +
-                        "\n Job title = "+
-                        emp.getJob_title() +
-                        "\n Hire date = "+
-                        emp.getHire_date()+
-                        "\n Department = "+
-                        emp.getDept_name()+
-                        "\n Manager = "+
-                        emp.getManager()+
-                        "\n Email Address = "+
-                        emp.getEmail()+
-                        "\n Career Goals = "+
-                        emp.getGoals()+
-                        "\n Bio = "+
-                        emp.getBio()
-
-        );
+        for (String member: emp.getTeam()) {
+            System.out.println(member);
+        }
     }
 
     public EmployeesDao() {
@@ -183,6 +163,7 @@ public class EmployeesDao implements Employees {
     public Employee allInfo(int id) {
 
         Employee emp = new Employee();
+        List<String> team = new ArrayList<>();
         String formatQuery = String.format("select * from employees where id = %d", id);
         try {
             Statement stmt = connection.createStatement();
@@ -206,6 +187,10 @@ public class EmployeesDao implements Employees {
             deptInfo(deptId, emp);
             int jobId = rs.getInt("job_id");
             jobInfo(jobId, emp);
+            team = teamList(deptId, emp);
+            emp.setTeam(team);
+
+
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -268,10 +253,39 @@ public class EmployeesDao implements Employees {
 //    }
 
 
-
     @Override
     public long insert(Employee emp) {
         return 0;
+    }
+
+    private List<String> teamList(int deptId, Employee emp){
+        System.out.println("running teamlist");
+        List<String> team = new ArrayList<>();
+        try{
+            String formatQuery = "SELECT first_name, last_name FROM employees where dept_id = " +
+                    deptId;
+            String firstName = "";
+            String lastName = "";
+            Statement stmt = connection.createStatement();
+            ResultSet rs = stmt.executeQuery(formatQuery);
+            System.out.println("teamList ran with: "+formatQuery);
+            while (rs.next()) {
+
+                firstName = rs.getString("first_name");
+                lastName = rs.getString("last_name");
+                if (!emp.getManager().equalsIgnoreCase(firstName+" "+lastName)) {
+                    team.add(String.format("%s %s", firstName, lastName));
+                    System.out.println(firstName+" "+lastName+
+                            "was added to the list");
+                }
+
+            }
+
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+
+        return team;
     }
 
     private List<Employee> processEmpList(String formatQuery) {
