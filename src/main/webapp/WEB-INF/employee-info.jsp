@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: johndeleon
@@ -80,7 +81,14 @@
                     <h3>Bio: ${emp.bio}</h3>
                 </div>
                 <div class="tab-pane fade" id="nav-contact" role="tabpanel"
-                     aria-labelledby="nav-contact-tab">TODO: list team members
+                     aria-labelledby="nav-contact-tab">
+                    <div>
+                        <h3>${emp.manager}</h3>
+                        <c:forEach var="member" items="${emp.team}">
+                            <p>${member}</p>
+                        </c:forEach>
+                    </div>
+
                 </div>
             </div>
 
