@@ -17,6 +17,9 @@
 <body>
 <%@ include file="/WEB-INF/partials/navbar.jsp" %>
 
+<c:choose >
+    <c:when test="${isadmin}">
+
 <div class="container">
     <h1>Please fill in your information.</h1>
     <form action="/registeremployee" method="post">
@@ -73,6 +76,13 @@
         <input type="submit" class="btn btn-primary btn-block">
     </form>
 </div>
+
+    </c:when>
+    <c:otherwise>
+        <% response.sendRedirect("/employees-list"); %>
+    </c:otherwise>
+
+</c:choose>
 
 <%@include file="partials/leghand.jsp" %>
 

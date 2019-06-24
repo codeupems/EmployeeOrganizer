@@ -3,6 +3,8 @@ package servlets;
 
 import dao.DaoFactory;
 import dao.Employee;
+import dao.User;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

@@ -78,6 +78,11 @@ public class EmployeeListServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request,
                          HttpServletResponse response) throws ServletException, IOException {
+        if (request.getSession().getAttribute("isadmin") == null) {
+            response.sendRedirect("/login");
+            return;
+        }
+
         System.out.println(" do get started");
 
         //int perPage = 6;
