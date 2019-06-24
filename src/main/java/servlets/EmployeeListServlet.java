@@ -14,49 +14,12 @@ import java.io.IOException;
 public class EmployeeListServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       /* System.out.printf("Post request hit with following parameters: %s %s %n",
-                request.getParameter("pagenum"), request.getParameter("perpage"));//debug info
-//        set up vars incase none are passed
-        int perPage = 6;
-        int pageNum = 1;
-        String pageNumParam= request.getParameter("pagenum"); //since I am calling this a lot I
-        // got tired of typing out the whole thing.
-        String perPageParam= request.getParameter("perpage");//since I am calling this a lot I
-        // got tired of typing out the whole thing.
-        if (request.getParameterMap().containsKey("perpage")) {
-            System.out.println("perpage if started");
-            int pageNumNum = Integer.parseInt( pageNumParam.split(" ")[0]) ;// split to array and
-            // pull first element. This should be the current number.
-            perPage = Integer.parseInt(perPageParam);
-            System.out.println("perpage completed");
-            if(pageNumParam.contains("-")){ // if this contains a - symbol that means the
-                // previous page button was pressed. so now we subtract pagenum by 1.
-                pageNum = --pageNumNum;
-                if(pageNum<1){
-                    pageNum =1;
-                }
-            }
-        }
-        if (request.getParameterMap().containsKey("pagenum")) {
-            System.out.println("pagenum if started");
-            int pageNumNum = Integer.parseInt( pageNumParam.split(" ")[0]) ;// split to array and
-            // pull first element. This should be the current number.
-            System.out.println("perpage char at index 0 = "+pageNumNum);
-            if(pageNumParam.contains("+")){// if this contains a + symbol that means the
-                // previous page button was pressed. so now we add pagenum by 1.
-                pageNum = ++pageNumNum;
-            }
-        }
-//        setting the page attributes.
-        request.setAttribute("perpage", perPage);
-        request.setAttribute("pagenum", pageNum);
-        request.setAttribute("emp", DaoFactory.empListDao().all(perPage, pageNum));
-        request.getRequestDispatcher("WEB-INF/employees-list.jsp").forward(request, response);
-        System.out.println("do post method completed.");// debug info*/
+
 
         System.out.println("DOPOST started");
         String search = request.getParameter("search");
         String type = request.getParameter("stype");
+
 
         if(type.equals("name")){
             request.setAttribute("emp", DaoFactory.empListDao().searchName(search));
@@ -71,11 +34,12 @@ public class EmployeeListServlet extends HttpServlet {
             request.setAttribute("emp", DaoFactory.empListDao().searchDept(search));
             System.out.println( "dept if triggered");
         }
-        if (true){
+        if (type.equals("delete")){
             System.out.println( "delete if started");
-            int id = Integer.parseInt(request.getParameter("delete"));
+            int id = Integer.parseInt(request.getParameter("id"));
             System.out.println("after parse" +id);
             DaoFactory.empListDao().delete(id);
+            request.setAttribute("emp", DaoFactory.empListDao().all());
         }
 
 

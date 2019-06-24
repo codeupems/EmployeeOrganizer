@@ -98,8 +98,9 @@
                     </form>
                         <c:if test="${isadmin}" >
                             <form action="/employees-list" method="post">
-                            <button class="btn btn-danger nav-style" name="delete" type="submit"
-                                    value="${emp.id}">Delete Employee</button>
+                            <button class="btn btn-danger nav-style" name="stype" type="submit"
+                                    value="delete">Delete Employee</button>
+                                <input type="number" name="id" value="${emp.id}" hidden>
                             </form>
                         </c:if>
                 </div>
