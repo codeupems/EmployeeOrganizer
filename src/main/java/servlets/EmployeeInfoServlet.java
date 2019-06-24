@@ -1,6 +1,7 @@
 package servlets;
 
 import dao.DaoFactory;
+import dao.Employee;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,6 +15,20 @@ public class EmployeeInfoServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        String search = request.getParameter("search");
 
+        if (request.getParameterMap().containsKey("update")) {
+            System.out.println("if hit true");
+            if(request.getParameter("update").equalsIgnoreCase("true")){
+                System.out.println("second if hit true");
+                String bio = request.getParameter("bio");
+                String goals = request.getParameter("goals");
+                int id = Integer.parseInt(request.getParameter("id"));
+                request.setAttribute("bio", bio);
+                request.setAttribute("goals",goals);
+                request.setAttribute("upddate", request.getParameter("update"));
+                DaoFactory.empListDao().updatBio(bio,id);
+                DaoFactory.empListDao().updatGoals(goals,id);
+            }
+        }
         request.setAttribute("emp",
                 DaoFactory.empListDao().allInfo(Integer.parseInt(request.getParameter("id"))));
         request.getRequestDispatcher("employee-info.jsp").forward(request, response);

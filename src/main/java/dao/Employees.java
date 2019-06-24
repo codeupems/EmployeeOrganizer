@@ -13,6 +13,8 @@ public interface Employees {
     Employee deptInfo(int deptId, Employee emp);
     Employee userInfo(int id, Employee emp);
     Employee jobInfo(int jobID, Employee emp);
+    void updatBio(String bio, int id);
+    void updatGoals(String goal, int id);
 
     long insert(Employee emp);
 
