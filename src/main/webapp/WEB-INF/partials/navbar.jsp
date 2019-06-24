@@ -30,8 +30,14 @@
                 <a class="nav-link " href="/login" tabindex="-1" aria-disabled="true">login</a>
 
             </li>
+<<<<<<< HEAD
             <li class="nav-item nav-li" id="logout">
                 <a class="nav-link" href="/logout" tabindex="-1" aria-disabled="true">logout</a>
+=======
+            <li class="nav-item" id="logout">
+                <a class="nav-link " href="/logout" tabindex="-1"
+                   aria-disabled="true">logout</a>
+>>>>>>> cea15965c4266eaf5cbce0b3d5a9ce6914272b24
             </li>
         </ul>
     </div>

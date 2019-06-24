@@ -1,3 +1,4 @@
+<%@ page import="dao.DaoFactory" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
@@ -15,11 +16,12 @@
 <body>
 <%@include file="partials/navbar.jsp" %>
 
+
 <div class="container" id="empcontainer">
     <%--    <div class="row">--%>
     <div class="col-4 float-left">
         <div class="card ">
-            <img src="https://robohash.org/${emp.first_name}?set=set4" alt="${emp.first_name}">
+            <img src="https://robohash.org/${emp.first_name}?set=set5" alt="${emp.first_name}">
             <div class="card-body">
                 <h1>${emp.first_name} ${emp.last_name}</h1>
                 <p>Employee No.: ${emp.id}</p>
@@ -51,41 +53,61 @@
                      aria-labelledby="nav-home-tab">
                     <div class="card">
                         <div class="card-body">
-                            <h3>Hire date:</h3> ${emp.hire_date}
+                            <h4>Hire date:</h4> ${emp.hire_date}
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-body">
-                            <h3>Title:</h3> ${emp.job_title}
+                            <h4>Title:</h4> ${emp.job_title}
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-body">
-                            <h3>Department:</h3> <p>${emp.dept_name}</p>
+                            <h4>Department:</h4>
+                            <p>${emp.dept_name}</p>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-body">
-                            <h3>Manager:</h3> ${emp.manager}
+                            <h4>Manager:</h4> ${emp.manager}
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-body">
-                            <h3>Email:</h3> ${emp.email}
+                            <h4>Email:</h4> ${emp.email}
                         </div>
                     </div>
                 </div>
                 <div class="tab-pane fade" id="nav-bio" role="tabpanel"
                      aria-labelledby="nav-profile-tab">
-                    <h3>Career Goal: ${emp.goals}</h3>
-                    <h3>Bio: ${emp.bio}</h3>
+                    <h4>Career Goal: </h4>
+
+                    <p>${emp.goals}</p>
+                    <hr class="my-2">
+                    <h4>Bio: </h4>
+                    <p>${emp.bio}</p>
+
+                    <c:if test="${emp.id == user.emp_id}">
+                        <form action="/employee-goals-bio-form" method="get">
+                            <input type="text" name="id" value="${emp.id}" hidden>
+
+
+                            <button>
+                                Update bio and career goals
+                            </button>
+                        </form>
+
+                    </c:if>
                 </div>
                 <div class="tab-pane fade" id="nav-contact" role="tabpanel"
                      aria-labelledby="nav-contact-tab">
                     <div>
-                        <h3>${emp.manager}</h3>
+                        <h3>Team Manager: </h3>
+                        <h6>${emp.manager}</h6>
+                        <hr class="my-2">
+                        <h4>Team: </h4>
                         <c:forEach var="member" items="${emp.team}">
-                            <p>${member}</p>
+                            <h6>${member}</h6>
                         </c:forEach>
                     </div>
 

@@ -22,7 +22,7 @@ if (user === loggedInUser){
 	d.removeChild(regUser);
 	d.removeChild(logOut);
 }
-// or else if use not an admin then remove the login
+// or else if user not an admin then remove the login
 else if (isAdmin){
 	d.removeChild(logIn);
 }

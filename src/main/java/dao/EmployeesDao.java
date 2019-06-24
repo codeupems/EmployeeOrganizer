@@ -2,7 +2,6 @@ package dao;
 
 import com.mysql.jdbc.Driver;
 import mysql.Config;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +19,7 @@ public class EmployeesDao implements Employees {
      * The connection object will be created just once, in this class' constructor, and the individual
      * methods that query the database should use the connection object to create statements.
      */
-    private Config config = new Config();
+    protected Config config = new Config();
     private Connection connection;
 
 
@@ -252,6 +251,31 @@ public class EmployeesDao implements Employees {
 //        List<Employee> employeeList = DaoFactory.empListDao().all();
 //    }
 
+    public void updatGoals(String goals, int id){
+        String formatQuery = "UPDATE employees SET goals = ? where id = ?";
+        try{
+            PreparedStatement stmt = connection.prepareStatement(formatQuery);
+            stmt.setString(1, goals);
+            stmt.setInt(2,id);
+            stmt.executeUpdate();
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
+    public void updatBio(String bio, int id){
+        String formatQuery = "UPDATE employees SET bio = ? where id = ?";
+        try{
+            PreparedStatement stmt = connection.prepareStatement(formatQuery);
+            stmt.setString(1, bio);
+            stmt.setInt(2,id);
+            stmt.executeUpdate();
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
 
     @Override
     public long insert(Employee emp) {
@@ -276,6 +300,18 @@ public class EmployeesDao implements Employees {
             return rs.getInt(1);
         } catch (SQLException e) {
             throw new RuntimeException("Error creating new employee", e);
+        }
+    }
+
+    @Override
+    public void delete(int id) {
+        String query = "DELETE FROM ems_db.employees WHERE id =?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+            stmt.setInt(1, id);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 
