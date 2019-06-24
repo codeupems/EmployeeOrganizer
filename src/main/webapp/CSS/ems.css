@@ -1,5 +1,4 @@
-body
-{
+body{
     background-color: #D89D91;
     font-family: 'Lato', sans-serif;
     color: #7E8E77;
@@ -10,31 +9,43 @@ h1{
     font-weight: bold;
     text-decoration: #7E8E77 underline;
 }
-
-/*select{*/
-/*    align-content: center;*/
-/*}*/
-
 a:hover{
     color: #5b6557;
 }
 a{
     color: #7E8E77;
 }
+p{
+    padding: 15px;
+}
+h2{
+    font-family: 'EB Garamond', serif;
+    padding-top: 20px;
+}
 button:hover{
     color: #7E8E77;
+}
+input{
+    background-color: rgba(224, 219, 217, 0.53);
+    color: #7E8E77;
+    margin: 20px;
+    border-radius: 8px;
 }
 .nav-style{
     background-color: rgba(224, 219, 217, 0.53);
     margin: 20px;
     border-radius: 8px;
+    color: #7E8E77 !important;
 }
 .nav-li{
-    color: #7E8E77;
+    color: #7E8E77 !important;
 }
 .leghand{
     background-color: rgba(224, 219, 217, 0.53);
     color: #7E8E77;
+    margin-bottom: 0;
+    margin-top: 2em;
+    list-style: none;
 }
 .perpage-div{
     box-sizing: border-box;
@@ -84,8 +95,48 @@ button:hover{
     border-color: #7E8E77;
     background-color: #D89D91;
 }
+.landing-style{
+    background-color: rgba(224, 219, 217, 0.53);
+    border-radius: 8px;
+    width: 85%;
+    color: #7E8E77;
+    margin: auto auto 50px;
+}
+.login-style{
+    background-color: rgba(224, 219, 217, 0.53);
+    width: 75%;
+    margin: auto;
+    padding-bottom: 20px;
+    border-radius: 8px;
+}
+.login-label{
+
+}
+.login-btn-style{
+    width: 80%;
+    color: #D89D91;
+    border-color: #7E8E77;
+    background-color: #7E8E77;
+}
+.login-btn-style:hover{
+    color: #7E8E77;
+    border-color: #7E8E77;
+    background-color: #D89D91;
+}
+.login-input{
+    width: 80%;
+    margin: auto;
+    display: block;
+}
+#landing-img{
+    /*width: 35em;*/
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    width: 50%;
+}
 #perpage{
     padding: 0;
     margin: 0;
 }
-

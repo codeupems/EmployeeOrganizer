@@ -6,11 +6,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<nav class="navbar navbar-expand-lg nav-style">
-    <a class="navbar-brand  nav-li emp_lu" href="#">Employee Lookup Tool</a>
+<nav class="navbar navbar-expand-lg nav-style navbar-light">
+    <a class="navbar-brand nav-li emp_lu" href="#">Employee Lookup Tool</a>
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarNav">
 
         <ul class="navbar-nav" id="topnav">
@@ -28,7 +30,7 @@
                 <a class="nav-link " href="/login" tabindex="-1" aria-disabled="true">login</a>
 
             </li>
-            <li class="nav-item" id="logout">
+            <li class="nav-item nav-li" id="logout">
                 <a class="nav-link" href="/logout" tabindex="-1" aria-disabled="true">logout</a>
             </li>
         </ul>

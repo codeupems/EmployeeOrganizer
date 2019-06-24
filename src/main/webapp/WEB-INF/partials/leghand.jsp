@@ -7,9 +7,15 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<footer class="fixed-bottom leghand">
-
-    <p>Leghand stuff will go here.</p>
+<footer class="bottomNav leghand navbar">
+    <nav>
+        <li>
+            Copyright © 2019
+        </li>
+        <li>
+            <a href="/about">About</a>
+        </li>
+    </nav>
 
 </footer>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

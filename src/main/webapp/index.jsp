@@ -15,22 +15,21 @@
 </head>
 <body>
 <%@ include file="WEB-INF/partials/navbar.jsp" %>
-<div class="jumbotron jumbotron-fluid">
-<h1>
-   Welcome to Employee Lister!
-</h1>
-    <p>
-        Employee Lister is your one-stop shop for employees. Login as an employee to be found by employers or login as an employer and
-        find the employee that's right for you!
-    </p>
-</div>
 
-<div class="card" style="width: 18rem;">
-    <img src="/img/employee_lister_lp.png" class="card-img-top" alt="employees">
-</div>
+    <div class="landing-style">
+        <h1>
+           Welcome to Employee Lister!
+        </h1>
+        <p>
+            Employee Lister is your one-stop shop for employees. Login as an employee to be found by employers or login as an employer and
+            find the employee that's right for you!
+        </p>
+    </div>
+    <div id="landing-img">
+        <img src="/img/image%20(1).png" class="card-img-top" alt="employees">
+    </div>
 
 <%@ include file="WEB-INF/partials/leghand.jsp" %>
-
 
 <%--changed something--%>
 </body>
