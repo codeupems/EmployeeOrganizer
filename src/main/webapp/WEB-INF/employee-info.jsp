@@ -11,17 +11,17 @@
 <html>
 <head>
     <title>Title</title>
-    <%@include file="WEB-INF/partials/head.jsp" %>
+    <%@include file="partials/head.jsp" %>
 </head>
 <body>
-<%@include file="WEB-INF/partials/navbar.jsp" %>
+<%@include file="partials/navbar.jsp" %>
 
 
 <div class="container" id="empcontainer">
     <%--    <div class="row">--%>
     <div class="col-4 float-left">
         <div class="card ">
-            <img src="https://robohash.org/${emp.first_name}?set=set4" alt="${emp.first_name}">
+            <img src="https://robohash.org/${emp.first_name}?set=set5" alt="${emp.first_name}">
             <div class="card-body">
                 <h1>${emp.first_name} ${emp.last_name}</h1>
                 <p>Employee No.: ${emp.id}</p>
@@ -121,7 +121,7 @@
 <%--</div>--%>
 
 
-<%@include file="WEB-INF/partials/leghand.jsp" %>
+<%@include file="partials/leghand.jsp" %>
 
 </body>
 </html>
