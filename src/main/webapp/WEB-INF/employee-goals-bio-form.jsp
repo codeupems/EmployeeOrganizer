@@ -24,14 +24,14 @@
             <%--            <input id="goals" name="goals" class="form-control" type="text" required--%>
             <%--                   value="${emp.goals}">--%>
             <div>
-                <textarea name="goals" id="goals" cols="60" rows="10">${emp.goals}</textarea>
+                <textarea name="goals" id="goals" cols="60" rows="5">${emp.goals}</textarea>
             </div>
         </div>
         <div class="form-group">
             <label for="bio">Personal Bio</label>
             <%--            <input id="bio" name="bio" class="form-control" type="text" required value="${emp.bio}">--%>
             <div>
-                <textarea name="bio" id="bio" cols="60" rows="10">${emp.bio}</textarea>
+                <textarea name="bio" id="bio" cols="60" rows="5">${emp.bio}</textarea>
             </div>
         </div>
         <input type="text" name="update" value="true" hidden>
