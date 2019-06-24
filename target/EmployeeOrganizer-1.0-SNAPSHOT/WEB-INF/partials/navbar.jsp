@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <nav class="navbar navbar-expand-lg nav-style">
-    <a class="navbar-brand  nav-li" href="#">Employee Lookup Tool</a>
+    <a class="navbar-brand  nav-li emp_lu" href="#">Employee Lookup Tool</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -15,7 +15,7 @@
 
         <ul class="navbar-nav" id="topnav">
             <li class="nav-item nav-li" id="home">
-                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item nav-li" id="list">
                 <a class="nav-link" href="/employees-list">Employee List</a>
@@ -25,8 +25,11 @@
             </li>
 
             <li class="nav-item nav-li" id="login">
-                <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">login</a>
+                <a class="nav-link " href="/login" tabindex="-1" aria-disabled="true">login</a>
 
+            </li>
+            <li class="nav-item" id="logout">
+                <a class="nav-link" href="/logout" tabindex="-1" aria-disabled="true">logout</a>
             </li>
         </ul>
     </div>

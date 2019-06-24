@@ -15,10 +15,10 @@
 </head>
 <body>
 <%@ include file="WEB-INF/partials/navbar.jsp" %>
+<div class="jumbotron jumbotron-fluid">
 <h1>
    Welcome to Employee Lister!
 </h1>
-<div>
     <p>
         Employee Lister is your one-stop shop for employees. Login as an employee to be found by employers or login as an employer and
         find the employee that's right for you!
@@ -26,7 +26,7 @@
 </div>
 
 <div class="card" style="width: 18rem;">
-    <img src="" class="card-img-top" alt="...">
+    <img src="/img/employee_lister_lp.png" class="card-img-top" alt="employees">
 </div>
 
 <%@ include file="WEB-INF/partials/leghand.jsp" %>

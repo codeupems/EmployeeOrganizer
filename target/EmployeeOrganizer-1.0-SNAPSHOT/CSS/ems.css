@@ -63,20 +63,29 @@ button:hover{
     color: #7E8E77;
     margin: 20px;
     border-radius: 8px;
-    width: 50%;
-    text-align: center;
-    box-sizing: border-box;
-    justify-items: center;
 }
 .search-bar-style{
-    background-color: #E0DBD9;
+    background-color: rgba(233, 228, 226, 0.85);
     color: #7E8E77;
-
 }
 .search-form:active{
     border-color: #7E8E77;
+}
+.emp_lu:active{
+    color: #7E8E77;
+}
+.card-btn-style{
+    color: #D89D91;
+    border-color: #7E8E77;
+    background-color: #7E8E77;
+}
+.card-btn-style:hover{
+    color: #7E8E77;
+    border-color: #7E8E77;
+    background-color: #D89D91;
 }
 #perpage{
     padding: 0;
     margin: 0;
 }
+
