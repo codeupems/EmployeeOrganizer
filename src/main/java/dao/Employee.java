@@ -18,6 +18,7 @@ public class Employee {
     private String dept_name;
     private String job_title;
     private String email;
+    private List<String> team;
 
     public Employee(int id, String gender, String first_name, String last_name, Date birth_date, Date hire_date,
                     double salary, String bio, String goals, int dept_id, int job_id) {
@@ -125,6 +126,10 @@ public class Employee {
         return email;
     }
 
+    public List<String> getTeam() {
+        return team;
+    }
+
     // setters
 
 
@@ -186,6 +191,10 @@ public class Employee {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public void setTeam(List<String> team) {
+        this.team = team;
     }
 }
 
