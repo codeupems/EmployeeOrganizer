@@ -23,9 +23,12 @@
             <li class="nav-item nav-li" id="reguser">
                 <a class="nav-link"  href="/registeruser">Register User</a>
             </li>
+
             <li class="nav-item nav-li" id="login">
                 <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">login</a>
+
             </li>
         </ul>
     </div>
 </nav>
+

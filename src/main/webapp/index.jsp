@@ -16,10 +16,22 @@
 <body>
 <%@ include file="WEB-INF/partials/navbar.jsp" %>
 <h1>
-   Welcome to Employee Lister! Your one-stop shop for Employees!
+   Welcome to Employee Lister!
 </h1>
+<div>
+    <p>
+        Employee Lister is your one-stop shop for employees. Login as an employee to be found by employers or login as an employer and
+        find the employee that's right for you!
+    </p>
+</div>
+
+<div class="card" style="width: 18rem;">
+    <img src="" class="card-img-top" alt="...">
+</div>
 
 <%@ include file="WEB-INF/partials/leghand.jsp" %>
+
+
 <%--changed something--%>
 </body>
 </html>
