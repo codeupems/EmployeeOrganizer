@@ -8,26 +8,33 @@ const logIn = document.getElementById("login");
 const logOut = document.getElementById("logout");
 // Adding possible other navbar items
 
-const user = '${user}';
+const user = '${user.username}';
 const employee = '${emp}';
 const isAdmin = '${isadmin}';
-const loggedInUser = '<% request.getSession().getAttribute("user");%>';
+// const loggedInUser = '<% request.getSession().getAttribute("user");%>';
+const loggedInUser = '${user.username}';
+
 
 console.log("is user logged in? "+loggedInUser);
 console.log("is admin?"+isAdmin);
 
 //if loggedInUser === user then remove the following
-if (user === loggedInUser){
+if (user === ""){
 	d.removeChild(list);
 	d.removeChild(regUser);
 	d.removeChild(logOut);
+	console.log("user not logged in");
 }
 // or else if user not an admin then remove the login
-else if (isAdmin){
+else if (isAdmin==="true"){
 	d.removeChild(logIn);
+	console.log("is adming");
 }
 //or else if user is not logged in then remove login and register user
-else if (user !== loggedInUser) {
+else  {
+	// d.removeChild(list);
 	d.removeChild(regUser);
+	// d.removeChild(logOut);
 	d.removeChild(logIn);
+	console.log("user is not admin");
 }
