@@ -255,7 +255,28 @@ public class EmployeesDao implements Employees {
 
     @Override
     public long insert(Employee emp) {
-        return 0;
+        String query = "INSERT INTO ems_db.employees( gender, first_name, last_name, birth_date, hire_date, salary," +
+                " bio, goals, dept_id, job_id) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+            stmt.setString(1, emp.getGender());
+            stmt.setString(2, emp.getFirst_name());
+            stmt.setString(3, emp.getLast_name());
+            stmt.setDate(4, (Date) emp.getBirth_date());
+            stmt.setDate(5, (Date) emp.getHire_date());
+            stmt.setDouble(6, emp.getSalary());
+            stmt.setString(7, emp.getBio());
+            stmt.setString(8, emp.getGoals());
+            stmt.setInt(9, emp.getDept_id());
+            stmt.setInt(10, emp.getJob_id());
+            stmt.executeUpdate();
+            ResultSet rs = stmt.getGeneratedKeys();
+            rs.next();
+            return rs.getInt(1);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error creating new employee", e);
+        }
     }
 
     private List<String> teamList(int deptId, Employee emp){
