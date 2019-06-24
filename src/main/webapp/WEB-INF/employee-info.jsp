@@ -77,15 +77,21 @@
                 </div>
                 <div class="tab-pane fade" id="nav-bio" role="tabpanel"
                      aria-labelledby="nav-profile-tab">
-                    <h3>Career Goal: ${emp.goals}</h3>
-                    <h3>Bio: ${emp.bio}</h3>
+                    <h3>Career Goal: </h3>
+                    <p>${emp.goals}</p>
+                    <hr class="my-2">
+                    <h3>Bio: </h3>
+                    <p>${emp.bio}</p>
                 </div>
                 <div class="tab-pane fade" id="nav-contact" role="tabpanel"
                      aria-labelledby="nav-contact-tab">
                     <div>
-                        <h3>${emp.manager}</h3>
+                        <h3>Team Manager: </h3>
+                        <h6>${emp.manager}</h6>
+                        <hr class="my-2">
+                        <h4>Team: </h4>
                         <c:forEach var="member" items="${emp.team}">
-                            <p>${member}</p>
+                            <h6>${member}</h6>
                         </c:forEach>
                     </div>
 
