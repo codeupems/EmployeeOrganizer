@@ -18,10 +18,11 @@ h1{
 a:hover{
     color: #5b6557;
 }
-
+a{
+    color: #7E8E77;
+}
 button:hover{
     color: #7E8E77;
-
 }
 .nav-style{
     background-color: rgba(224, 219, 217, 0.53);
