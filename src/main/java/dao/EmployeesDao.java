@@ -303,6 +303,18 @@ public class EmployeesDao implements Employees {
         }
     }
 
+    @Override
+    public void delete(int id) {
+        String query = "DELETE FROM ems_db.employees WHERE id =?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+            stmt.setInt(1, id);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     private List<String> teamList(int deptId, Employee emp){
         System.out.println("running teamlist");
         List<String> team = new ArrayList<>();

@@ -54,6 +54,7 @@ public class EmployeeListServlet extends HttpServlet {
         request.getRequestDispatcher("WEB-INF/employees-list.jsp").forward(request, response);
         System.out.println("do post method completed.");// debug info*/
 
+        System.out.println("DOPOST started");
         String search = request.getParameter("search");
         String type = request.getParameter("stype");
 
@@ -69,6 +70,12 @@ public class EmployeeListServlet extends HttpServlet {
         if(type.equals("dept")){
             request.setAttribute("emp", DaoFactory.empListDao().searchDept(search));
             System.out.println( "dept if triggered");
+        }
+        if (true){
+            System.out.println( "delete if started");
+            int id = Integer.parseInt(request.getParameter("delete"));
+            System.out.println("after parse" +id);
+            DaoFactory.empListDao().delete(id);
         }
 
 

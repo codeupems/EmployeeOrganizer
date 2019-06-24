@@ -96,6 +96,12 @@
                         <button class="btn btn-primary nav-style" name="id" type="submit"
                                 value="${emp.id}">View Employee</button>
                     </form>
+                        <c:if test="${isadmin}" >
+                            <form action="/employees-list" method="post">
+                            <button class="btn btn-danger nav-style" name="delete" type="submit"
+                                    value="${emp.id}">Delete Employee</button>
+                            </form>
+                        </c:if>
                 </div>
             </div>
 

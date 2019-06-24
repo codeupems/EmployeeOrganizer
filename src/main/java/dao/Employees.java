@@ -17,5 +17,6 @@ public interface Employees {
     void updatGoals(String goal, int id);
 
     long insert(Employee emp);
+    void delete(int id);
 
 }
