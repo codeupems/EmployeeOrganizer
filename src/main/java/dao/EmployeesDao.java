@@ -2,7 +2,6 @@ package dao;
 
 import com.mysql.jdbc.Driver;
 import mysql.Config;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +19,7 @@ public class EmployeesDao implements Employees {
      * The connection object will be created just once, in this class' constructor, and the individual
      * methods that query the database should use the connection object to create statements.
      */
-    private Config config = new Config();
+    protected Config config = new Config();
     private Connection connection;
 
 

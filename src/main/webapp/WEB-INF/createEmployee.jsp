@@ -76,5 +76,8 @@
 
 <%@include file="partials/leghand.jsp" %>
 
+<script>
+    <%@include file="js/jobTitleChoice.js"%>
+</script>
 </body>
 </html>
