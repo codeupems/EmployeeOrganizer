@@ -13,7 +13,7 @@ import java.io.IOException;
 @WebServlet(name = "EmployeeInfoServlet", urlPatterns = "/employee-info")
 public class EmployeeInfoServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String search = request.getParameter("search");
+//        String search = request.getParameter("search");
 
         if (request.getParameterMap().containsKey("update")) {
             System.out.println("if hit true");
@@ -31,14 +31,15 @@ public class EmployeeInfoServlet extends HttpServlet {
         }
         request.setAttribute("emp",
                 DaoFactory.empListDao().allInfo(Integer.parseInt(request.getParameter("id"))));
-        request.getRequestDispatcher("WEB-INF/employee-info.jsp").forward(request, response);
+        request.getRequestDispatcher("employee-info.jsp").forward(request, response);
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //response.sendRedirect("/employees-search");
+        response.sendRedirect("/employees-search");
         request.setAttribute("emp", DaoFactory.empListDao().allInfo(1));
-        request.getRequestDispatcher("WEB-INF/employee-info.jsp").forward(request, response);
+        request.getRequestDispatcher("employee-info.jsp").forward(request, response);
+        System.out.println("test");
 
     }
 }

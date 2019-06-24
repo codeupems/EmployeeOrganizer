@@ -3,6 +3,8 @@ package servlets;
 
 import dao.DaoFactory;
 import dao.Employee;
+import dao.User;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,7 +20,7 @@ import java.sql.Date;
 public class CreateEmployeeServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/WEB-INF/create_employee.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/createEmployee.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
