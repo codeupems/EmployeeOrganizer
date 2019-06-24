@@ -252,6 +252,31 @@ public class EmployeesDao implements Employees {
 //        List<Employee> employeeList = DaoFactory.empListDao().all();
 //    }
 
+    public void updatGoals(String goals, int id){
+        String formatQuery = "UPDATE employees SET goals = ? where id = ?";
+        try{
+            PreparedStatement stmt = connection.prepareStatement(formatQuery);
+            stmt.setString(1, goals);
+            stmt.setInt(2,id);
+            stmt.executeUpdate();
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
+    public void updatBio(String bio, int id){
+        String formatQuery = "UPDATE employees SET bio = ? where id = ?";
+        try{
+            PreparedStatement stmt = connection.prepareStatement(formatQuery);
+            stmt.setString(1, bio);
+            stmt.setInt(2,id);
+            stmt.executeUpdate();
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
 
     @Override
     public long insert(Employee emp) {
