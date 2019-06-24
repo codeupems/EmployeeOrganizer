@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "EmployeeSearchServlet", urlPatterns = "/employee-info")
+@WebServlet(name = "EmployeeInfoServlet", urlPatterns = "/employee-info")
 public class EmployeeInfoServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String search = request.getParameter("search");
