@@ -26,12 +26,17 @@
                 <a class="nav-link"  href="/registeruser">Register User</a>
             </li>
 
-            <li class="nav-item nav-li" id="login">
-                <a class="nav-link " href="/login" tabindex="-1" aria-disabled="true">login</a>
-
+            <li class="nav-item" id="create">
+                <a class="nav-link" href="/registeremployee" tabindex="-1"
+                  >Register Employee</a>
             </li>
-            <li class="nav-item nav-li" id="logout">
-                <a class="nav-link" href="/logout" tabindex="-1" aria-disabled="true">logout</a>
+            <li class="nav-item" id="login">
+                <a class="nav-link" href="/login" tabindex="-1" aria-disabled="true">login</a>
+            </li>
+
+            <li class="nav-item" id="logout">
+                <a class="nav-link " href="/logout" tabindex="-1"
+                   aria-disabled="true">logout</a>
             </li>
         </ul>
     </div>

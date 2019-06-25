@@ -14,20 +14,20 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-<div class="login-style">
+<div class="form-style">
 
     <h2>Please Log In</h2>
 
     <form action="/login" method="POST">
         <div class="form-group">
-            <label for="username" class="login-label login-input">Username</label>
-            <input id="username" name="username" class="form-control login-input" type="text">
+            <label for="username">Username</label>
+            <input id="username" name="username" class="form-control form-input" type="text">
         </div>
         <div class="form-group">
-            <label for="password" class="login-label">Password</label>
-            <input id="password" name="password" class="form-control login-input" type="password">
+            <label for="password">Password</label>
+            <input id="password" name="password" class="form-control form-input" type="password">
         </div>
-        <input type="submit" class="btn login-btn-style" value="Log In">
+        <input type="submit" class="btn form-btn-style" value="Log In">
         <div class="form-group">
         <a href="/registeruser">Not Registered Yet?</a>
         </div>

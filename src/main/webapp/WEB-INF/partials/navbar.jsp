@@ -37,7 +37,6 @@
             <li class="nav-item" id="logout">
                 <a class="nav-link " href="/logout" tabindex="-1"
                    aria-disabled="true">logout</a>
-
             </li>
         </ul>
     </div>

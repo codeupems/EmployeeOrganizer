@@ -7,13 +7,13 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<footer class="bottomNav leghand navbar">
+<footer class="leghand">
     <nav>
-        <ul class="navbar-nav">
-        <li class="nav-item nav-li">
+        <ul>
+        <li class="nav-li">
             Copyright © 2019
         </li>
-        <li class="nav-item nav-li">
+        <li class="nav-li">
             <a href="/about">About</a>
         </li>
         </ul>

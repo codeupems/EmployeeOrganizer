@@ -39,6 +39,7 @@ input{
 }
 .nav-li{
     color: #7E8E77 !important;
+    list-style: none;
 }
 .leghand{
     background-color: rgba(224, 219, 217, 0.53);
@@ -46,6 +47,9 @@ input{
     margin-bottom: 0;
     margin-top: 2em;
     list-style: none;
+    box-sizing: border-box;
+    justify-content: center;
+    align-content: end;
 }
 .perpage-div{
     box-sizing: border-box;
@@ -102,15 +106,12 @@ input{
     color: #7E8E77;
     margin: auto auto 50px;
 }
-.login-style{
+.form-style{
     background-color: rgba(224, 219, 217, 0.53);
     width: 75%;
     margin: auto;
     padding-bottom: 20px;
     border-radius: 8px;
-}
-.login-label{
-
 }
 .login-btn-style{
     width: 80%;
@@ -123,7 +124,7 @@ input{
     border-color: #7E8E77;
     background-color: #D89D91;
 }
-.login-input{
+.form-input{
     width: 80%;
     margin: auto;
     display: block;
