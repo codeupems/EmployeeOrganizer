@@ -9,11 +9,11 @@
 
 <footer class="bottomNav leghand navbar">
     <nav>
-        <ul class="nav-bar">
-        <li class="nav-item">
+        <ul class="navbar-nav">
+        <li class="nav-item nav-li">
             Copyright © 2019
         </li>
-        <li class="nav-item">
+        <li class="nav-item nav-li">
             <a href="/about">About</a>
         </li>
         </ul>
