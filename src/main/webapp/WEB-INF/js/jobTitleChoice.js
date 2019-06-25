@@ -7,9 +7,9 @@ $(document).ready(function () {
     list1.options[0] = new Option('--Select--', "0");
     list1.options[1] = new Option('Tech', "1");
     list1.options[2] = new Option('HR', "2");
-    list1.options[3] = new Option('Fin', "3");
-    list1.options[4] = new Option('Mar', "4");
-    list1.options[5] = new Option('Prod', "5");
+    list1.options[3] = new Option('Finance', "3");
+    list1.options[4] = new Option('Marketing', "4");
+    list1.options[5] = new Option('Production', "5");
 });
 
 $("#dept_id").change(function getJobTitle(){
@@ -29,37 +29,37 @@ $("#dept_id").change(function getJobTitle(){
     {
 
         list2.options.length=0;
-        list2.options[0] = new Option('Pro', "4");
-        list2.options[1] = new Option('SPro', "5");
+        list2.options[0] = new Option('Programer', "4");
+        list2.options[1] = new Option('Senior Programmer', "5");
 
     }
     else if (list1SelectedValue ==='2')
     {
 
         list2.options.length=0;
-        list2.options[0] = new Option('clerk', "1");
-        list2.options[1] = new Option('Admin', "2");
-        list2.options[2] = new Option('LAdmin', "3");
+        list2.options[0] = new Option('Clerk', "1");
+        list2.options[1] = new Option('Administrator', "2");
+        list2.options[2] = new Option('Lead Administrator', "3");
 
     }else if (list1SelectedValue ==='3')
     {
 
         list2.options.length=0;
-        list2.options[0] = new Option('Acc', "8");
-        list2.options[1] = new Option('LAcc', "9");
+        list2.options[0] = new Option('Accountant', "8");
+        list2.options[1] = new Option('Lead Accountant', "9");
 
     }else if (list1SelectedValue ==='4')
     {
 
         list2.options.length=0;
-        list2.options[0] = new Option('Consult', "10");
+        list2.options[0] = new Option('Consultant', "10");
 
     }else if (list1SelectedValue ==='5')
     {
 
         list2.options.length=0;
-        list2.options[0] = new Option('ProA', "6");
-        list2.options[1] = new Option('SProA', "7");
+        list2.options[0] = new Option('Program Architect', "6");
+        list2.options[1] = new Option('Senior Program Architect', "7");
 
     }
 });
