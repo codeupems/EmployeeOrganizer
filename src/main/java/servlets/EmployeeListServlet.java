@@ -59,7 +59,7 @@ public class EmployeeListServlet extends HttpServlet {
         //int perPage = 6;
         //int pageNum = 1;
 //        System.out.printf("get request hit with following parameters: %s %s %n",
-                request.getAttribute("pagenum"), request.getParameter("perpage"));
+//                request.getAttribute("pagenum"), request.getParameter("perpage"));
 
         //request.setAttribute("perpage",perPage);
         // request.setAttribute("pagenum", pageNum);
@@ -68,6 +68,6 @@ public class EmployeeListServlet extends HttpServlet {
         request.getRequestDispatcher("WEB-INF/employees-list.jsp").forward(request, response);
 
 //        System.out.printf("get request completed with following parameters: pagenum: %s perpage: %s %n",
-                request.getAttribute("pagenum"), request.getParameter("perpage"));
+//                request.getAttribute("pagenum"), request.getParameter("perpage"));
     }
 }

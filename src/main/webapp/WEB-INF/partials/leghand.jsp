@@ -11,7 +11,7 @@
 <footer class="bottomNav leghand navbar fixed-bottom">
 
     <a href=# > Copyright © 2019 </a>
-    <a href=“/about”>About</a>
+<%--    <a href=“/about”>About</a>--%>
 
 </footer>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
