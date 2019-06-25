@@ -54,11 +54,11 @@ public class EmployeeListServlet extends HttpServlet {
             return;
         }
 
-        System.out.println(" do get started");
+//        System.out.println(" do get started");
 
         //int perPage = 6;
         //int pageNum = 1;
-        System.out.printf("get request hit with following parameters: %s %s %n",
+//        System.out.printf("get request hit with following parameters: %s %s %n",
                 request.getAttribute("pagenum"), request.getParameter("perpage"));
 
         //request.setAttribute("perpage",perPage);
@@ -67,7 +67,7 @@ public class EmployeeListServlet extends HttpServlet {
         request.setAttribute("emp", DaoFactory.empListDao().all());
         request.getRequestDispatcher("WEB-INF/employees-list.jsp").forward(request, response);
 
-        System.out.printf("get request completed with following parameters: pagenum: %s perpage: %s %n",
+//        System.out.printf("get request completed with following parameters: pagenum: %s perpage: %s %n",
                 request.getAttribute("pagenum"), request.getParameter("perpage"));
     }
 }
