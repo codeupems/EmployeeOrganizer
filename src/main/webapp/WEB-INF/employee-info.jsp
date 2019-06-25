@@ -88,7 +88,7 @@
                     <p>${emp.bio}</p>
 
                     <c:if test="${emp.id == user.emp_id}">
-                        <form action="/employee-goals-bio-form" method="get">
+                        <form action="/employee-goals-bio-form" method="post">
                             <input type="text" name="id" value="${emp.id}" hidden>
 
 
