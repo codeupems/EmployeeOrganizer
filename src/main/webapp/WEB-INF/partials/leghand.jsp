@@ -8,10 +8,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <br class="my-5">
 
-<footer class="bottomNav leghand navbar">
+<footer class="bottomNav leghand navbar fixed-bottom">
 
-    <a href=# class="nav-li leghand-a"> Copyright © 2019 </a>
-    <a href=“/about” class="nav-li leghand-a">About</a>
+    <a href=# > Copyright © 2019 </a>
+    <%--    <a href=“/about”>About</a>--%>
 
 </footer>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -24,5 +24,5 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 <script>
-    <%@include file="/WEB-INF/js/topNavBar.js"%>
+	<%@include file="/WEB-INF/js/topNavBar.js"%>
 </script>
