@@ -6,18 +6,12 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<br class="my-5">
 
-<footer class="leghand">
-    <nav class="leghand-nav">
-        <ul class="navbar">
-        <li class="nav-li">
-            Copyright © 2019
-        </li>
-        <li class="nav-li leghand-li">
-            <a href="/about">About</a>
-        </li>
-        </ul>
-    </nav>
+<footer class="bottomNav leghand-nav navbar">
+
+    <a href=# class="nav-li leghand-a"> Copyright © 2019 </a>
+    <a href=“/about” class="nav-li leghand-a">About</a>
 
 </footer>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

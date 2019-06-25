@@ -84,6 +84,9 @@
 
 </c:choose>
 
+
+
+
 <%@include file="partials/leghand.jsp" %>
 
 <script>

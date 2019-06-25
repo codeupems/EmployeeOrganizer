@@ -135,21 +135,19 @@ input{
     margin: auto;
     display: block;
 }
-.leghand-nav{
+.leghand-nav {
     position: fixed;
-    /*bottom: 0px;*/
     padding-left: 1em;
     background-color: rgba(224, 219, 217, 0.53);
     color: #7E8E77;
     margin-bottom: 0;
     margin-top: 2em;
-    list-style: none;
 }
 #landing-img{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding: 20px;
+    padding: 30px;
     width: 50%;
 }
 #perpage{
