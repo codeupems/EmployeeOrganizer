@@ -21,8 +21,8 @@
            Welcome to Employee Lister!
         </h1>
         <p>
-            Employee Lister is your one-stop shop for employees. Login as an employee to be found by employers or login as an employer and
-            find the employee that's right for you!
+            Employee Lister is your one-stop shop for employees. Login as an employee or as a
+            manager and look up your team members!
         </p>
     </div>
     <div id="landing-img">
