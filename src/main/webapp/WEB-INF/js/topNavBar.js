@@ -16,8 +16,8 @@ const isAdmin = '${isadmin}';
 const loggedInUser = '${user.username}';
 
 
-console.log("is user logged in? "+loggedInUser);
-console.log("is admin?"+isAdmin);
+// console.log("is user logged in? "+loggedInUser);
+// console.log("is admin?"+isAdmin);
 
 //if user = null then remove the following
 if (user === ""){
@@ -25,12 +25,12 @@ if (user === ""){
 	d.removeChild(regUser);
 	d.removeChild(regEmp);
 	d.removeChild(logOut);
-	console.log("user not logged in");
+	// console.log("user not logged in");
 }
 // or else if user not an admin then remove the login
 else if (isAdmin==="true"){
 	d.removeChild(logIn);
-	console.log("is adming");
+	// console.log("is adming");
 }
 //or else if user is not logged in then remove login and register user
 else  {
@@ -39,5 +39,5 @@ else  {
 	// d.removeChild(logOut);
 	d.removeChild(logIn);
 	d.removeChild(regEmp);
-	console.log("user is not admin");
+	// console.log("user is not admin");
 }
