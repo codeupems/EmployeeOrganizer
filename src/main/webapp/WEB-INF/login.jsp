@@ -27,7 +27,7 @@
             <label for="password">Password</label>
             <input id="password" name="password" class="form-control form-input" type="password">
         </div>
-        <input type="submit" class="btn form-btn-style" value="Log In">
+        <input type="submit" class="btn login-btn-style" value="Log In">
         <div class="form-group">
         <a href="/registeruser">Not Registered Yet?</a>
         </div>

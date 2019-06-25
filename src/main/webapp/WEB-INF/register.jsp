@@ -39,7 +39,7 @@
             <input id="emp_id" name="emp_id" class="form-control form-input" type="text" required>
 
         </div>
-        <input type="submit" class="btn btn-primary btn-block login-btn-style">
+        <input type="submit" class="btn login-btn-style">
     </form>
 </div>
 <script>

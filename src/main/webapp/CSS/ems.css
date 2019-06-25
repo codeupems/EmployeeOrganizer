@@ -42,14 +42,14 @@ input{
     list-style: none;
 }
 .leghand{
-    background-color: rgba(224, 219, 217, 0.53);
-    color: #7E8E77;
-    margin-bottom: 0;
-    margin-top: 2em;
-    list-style: none;
-    box-sizing: border-box;
-    justify-content: center;
-    align-content: end;
+    /*background-color: rgba(224, 219, 217, 0.53);*/
+    /*color: #7E8E77;*/
+    /*margin-bottom: 0;*/
+    /*margin-top: 2em;*/
+    /*list-style: none;*/
+    /*box-sizing: border-box;*/
+    /*justify-content: center;*/
+    /*align-content: end;*/
 }
 .perpage-div{
     box-sizing: border-box;
@@ -64,6 +64,9 @@ input{
 }
 .btn-style{
     color: #7E8E77;
+    margin-right: auto;
+    margin-left: auto;
+    width: 80%;
 }
 .search-btn-style{
     color: #7E8E77;
@@ -109,7 +112,8 @@ input{
 .form-style{
     background-color: rgba(224, 219, 217, 0.53);
     width: 75%;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     padding-bottom: 20px;
     border-radius: 8px;
 }
@@ -118,6 +122,8 @@ input{
     color: #D89D91;
     border-color: #7E8E77;
     background-color: #7E8E77;
+    margin-left: auto;
+    margin-right: auto;
 }
 .login-btn-style:hover{
     color: #7E8E77;
@@ -128,6 +134,16 @@ input{
     width: 80%;
     margin: auto;
     display: block;
+}
+.leghand-nav{
+    position: fixed;
+    /*bottom: 0px;*/
+    padding-left: 1em;
+    background-color: rgba(224, 219, 217, 0.53);
+    color: #7E8E77;
+    margin-bottom: 0;
+    margin-top: 2em;
+    list-style: none;
 }
 #landing-img{
     display: block;

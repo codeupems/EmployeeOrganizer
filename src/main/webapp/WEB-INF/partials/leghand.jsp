@@ -8,12 +8,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <footer class="leghand">
-    <nav>
-        <ul>
+    <nav class="leghand-nav">
+        <ul class="navbar">
         <li class="nav-li">
             Copyright © 2019
         </li>
-        <li class="nav-li">
+        <li class="nav-li leghand-li">
             <a href="/about">About</a>
         </li>
         </ul>

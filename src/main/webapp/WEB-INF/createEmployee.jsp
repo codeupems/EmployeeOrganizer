@@ -20,12 +20,12 @@
 <c:choose >
     <c:when test="${isadmin}">
 
-<div class="container">
+<div class="form-style">
     <h2>Please fill in your information.</h2>
     <form action="/registeremployee" method="post">
         <div class="form-group">
             <label for="gender">What is your Gender?</label>
-            <select class="custom-select my-1 mr-sm-2" id="gender" name="gender" required>
+            <select class="custom-select my-1 mr-sm-2 form-input" id="gender" name="gender" required>
                 <option selected>Choose...</option>
                 <option value="M">Male</option>
                 <option value="F">Female</option>
@@ -33,47 +33,47 @@
         </div>
         <div class="form-group">
             <label for="first_name">First Name</label>
-            <input id="first_name" name="first_name" class="form-control" type="text" required>
+            <input id="first_name" name="first_name" class="form-control form-input" type="text" required>
         </div>
         <div class="form-group">
             <label for="last_name">Last Name</label>
-            <input id="last_name" name="last_name" class="form-control" type="text" required>
+            <input id="last_name" name="last_name" class="form-control form-input" type="text" required>
         </div>
         <div class="form-group">
             <label for="birth_date">Birthday</label>
-            <input id="birth_date" name="birth_date" class="form-control" type="date" placeholder="YYYMMDD" required>
+            <input id="birth_date" name="birth_date" class="form-control form-input" type="date" placeholder="YYYMMDD" required>
         </div>
         <div class="form-group">
             <label for="hire_date">Hire Date</label>
-            <input id="hire_date" name="hire_date" class="form-control" type="date" placeholder="YYYMMDD" required>
+            <input id="hire_date" name="hire_date" class="form-control form-input" type="date" placeholder="YYYMMDD" required>
         </div>
         <div class="form-group">
             <label for="salary">Salary</label>
-            <input id="salary" name="salary" class="form-control" type="text" placeholder="Enter current salary" required>
+            <input id="salary" name="salary" class="form-control form-input" type="text" placeholder="Enter current salary" required>
         </div>
         <div class="form-group">
             <label for="bio">Bio</label>
-            <textarea class="form-control" id="bio" name="bio" placeholder="Enter you're bio..."></textarea>
+            <textarea class="form-control form-input" id="bio" name="bio" placeholder="Enter you're bio..."></textarea>
         </div>
         <div class="form-group">
             <label for="goals">Goals</label>
-            <input id="goals" name="goals" class="form-control" type="text" placeholder="Enter you're goals..." required>
+            <input id="goals" name="goals" class="form-control form-input" type="text" placeholder="Enter you're goals..." required>
         </div>
         <div class="form-group">
             <label for="dept_id">Department ID</label>
-            <select class="form-control my-1 mr-sm-2" id="dept_id" name="dept_id" onClick="getJobTitle()" required>
+            <select class="form-control my-1 mr-sm-2 form-input" id="dept_id" name="dept_id" onClick="getJobTitle()" required>
                 <%--                This is dynamically made in the jobTitleChoice.js / DONT change "id"--%>
 
             </select>
         </div>
         <div class="form-group">
             <label for="job_id">Job Title</label>
-            <select class="form-control my-1 mr-sm-2" id="job_id" name="job_id"  required>
+            <select class="form-control my-1 mr-sm-2 form-input" id="job_id" name="job_id"  required>
                 <%--                This is dynamically made in the jobTitleChoice.js / DONT change "id"--%>
 
             </select>
         </div>
-        <input type="submit" class="btn btn-primary btn-block">
+        <input type="submit" class="btn btn-block search-btn-style">
     </form>
 </div>
 
