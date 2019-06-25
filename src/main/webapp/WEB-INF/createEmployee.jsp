@@ -68,7 +68,7 @@
         </div>
         <div class="form-group">
             <label for="job_id">Job Title</label>
-            <select class="form-control my-1 mr-sm-2" id="job_id" name="job_id" required>
+            <select class="form-control my-1 mr-sm-2" id="job_id" name="job_id"  required>
                 <%--                This is dynamically made in the jobTitleChoice.js / DONT change "id"--%>
 
             </select>
