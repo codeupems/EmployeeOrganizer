@@ -109,9 +109,6 @@ input{
     padding-bottom: 20px;
     border-radius: 8px;
 }
-.login-label{
-
-}
 .login-btn-style{
     width: 80%;
     color: #D89D91;
@@ -128,12 +125,19 @@ input{
     margin: auto;
     display: block;
 }
+.leghand-a{
+    color: #7E8E77;
+}
+.leghand-a:active{
+    color: #7E8E77;
+    text-decoration: none;
+}
 #landing-img{
     /*width: 35em;*/
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding: 20px;
+    padding: 30px;
     width: 50%;
 }
 #perpage{
