@@ -27,12 +27,10 @@
             <label for="password" class="login-label">Password</label>
             <input id="password" name="password" class="form-control login-input" type="password">
         </div>
-<<<<<<< HEAD
         <input type="submit" class="btn login-btn-style" value="Log In">
-=======
-        <input type="submit" class="btn btn-primary btn-block" value="Log In">
+        <div class="form-group">
         <a href="/registeruser">Not Registered Yet?</a>
->>>>>>> cea15965c4266eaf5cbce0b3d5a9ce6914272b24
+        </div>
     </form>
 </div>
 

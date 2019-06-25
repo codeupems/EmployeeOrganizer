@@ -9,12 +9,14 @@
 
 <footer class="bottomNav leghand navbar">
     <nav>
-        <li>
+        <ul class="nav-bar">
+        <li class="nav-item">
             Copyright © 2019
         </li>
-        <li>
+        <li class="nav-item">
             <a href="/about">About</a>
         </li>
+        </ul>
     </nav>
 
 </footer>

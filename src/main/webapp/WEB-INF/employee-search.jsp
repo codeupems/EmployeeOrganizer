@@ -22,13 +22,9 @@
 
         </form>
     </nav>
-    <div class="container">
-
-
-    </div>
     <div>
         <%@ include file="/WEB-INF/partials/leghand.jsp" %>
-</div>
+    </div>
 <%--<script src="/js/main.js"></script>--%>
 </body>
 </html>
