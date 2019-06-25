@@ -110,6 +110,11 @@
     </div>
 
 </div>
+<div class="foat-left">
+    <br>
+    <br>
+    <br>
+</div>
 <div>
     <%@include file="partials/leghand.jsp" %>
 </div>

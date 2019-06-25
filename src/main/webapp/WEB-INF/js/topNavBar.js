@@ -19,7 +19,7 @@ const loggedInUser = '${user.username}';
 console.log("is user logged in? "+loggedInUser);
 console.log("is admin?"+isAdmin);
 
-//if loggedInUser === user then remove the following
+//if user = null then remove the following
 if (user === ""){
 	d.removeChild(list);
 	d.removeChild(regUser);
