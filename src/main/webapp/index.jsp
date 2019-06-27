@@ -25,9 +25,6 @@
             manager and look up your team members!
         </p>
     </div>
-    <div id="landing-img">
-        <img src="/img/image%20(1).png" class="card-img-top" alt="employees">
-    </div>
 
 <%@ include file="WEB-INF/partials/leghand.jsp" %>
 

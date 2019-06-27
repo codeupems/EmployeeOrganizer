@@ -19,39 +19,6 @@
 </script>
 <div class="container">
     <h1>Employees List</h1>
-
-    <%--    <form action="/employees-list" method="post">--%>
-    <%--        <div class="float-left clear-fix col-12">--%>
-    <%--            <div class="col-3 float-left m-3 ">--%>
-    <%--                <label for="perpage">Show how many per page?</label>--%>
-    <%--                <select id="perpage" class="form-control form-control-sm " name="perpage"--%>
-    <%--                        onchange="options[selectedIndex].value&&self.location.reload(true)">--%>
-
-    <%--                    <option value="6">6</option>--%>
-    <%--                    <option value="12" >12</option>--%>
-    <%--                    <option value="18">18</option>--%>
-    <%--                    <option value="24">24</option>--%>
-    <%--                    <option value="30">30</option>--%>
-    <%--                </select>--%>
-    <%--            </div>--%>
-
-    <%--            &lt;%&ndash; buttons to move page forard or backward.&ndash;%&gt;--%>
-    <%--            <div class="col-6 float-right m-3 form-row">--%>
-
-    <%--                <button class=" btn btn-light float-right" type="submit" name="pagenum"--%>
-    <%--                        value="${pagenum} -1">Previous--%>
-    <%--                    Page</button>--%>
-    <%--                <button class=" btn btn-light float-right" name="pagenum" value=${pagenum}>--%>
-    <%--                    Page Number <span class="badge badge-light">${pagenum}</span>--%>
-    <%--                </button>--%>
-    <%--                <button class=" btn btn-light float-right" type="submit" name="pagenum"--%>
-    <%--                       value="${pagenum} +1" >Next Page--%>
-    <%--                </button>--%>
-    <%--            </div>--%>
-    <%--        </div>--%>
-
-    <%--    </form>--%>
-
     <nav class="navbar navbar-light search-nav-style">
         <a class="navbar-brand">Employee Search</a>
         <form class="form-inline" method="post">
@@ -86,14 +53,11 @@
                 <img src="https://robohash.org/${emp.first_name}?set=set5" class="card-img-top"
                      alt="...">
                 <div class="card-body nav-style">
-
-<%--                <div class="card-body nav-style">--%>
-
                     <h5 class="card-title"><c:out value="${emp.first_name} ${emp.last_name}"/></h5>
                     <p class="card-text">ID: <c:out value="${emp.id}"/></p>
                     <form action="/employee-info" method="post">
 
-                        <button class="btn card-btn-style" name="id" type="submit"
+                        <button class="btn card-btn-style viewbutton" name="id" type="submit"
                                 value="${emp.id}">View Employee</button>
                     </form>
                         <c:if test="${isadmin}" >
@@ -110,12 +74,11 @@
     </div>
 
 </div>
-<div class="foat-left">
+<div class="float-left">
     <br>
-    <br>
-    <br>
+    <br class="my-5">
 </div>
-<div>
+<div class="mt-5">
     <%@include file="partials/leghand.jsp" %>
 </div>
 <script src="/"></script>

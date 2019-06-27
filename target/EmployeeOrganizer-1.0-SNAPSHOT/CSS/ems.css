@@ -1,5 +1,5 @@
 body{
-    background-color: #D89D91;
+    background-color: lightgrey;
     font-family: 'Lato', sans-serif;
     color: #7E8E77;
     text-align: center;
@@ -28,7 +28,7 @@ button:hover{
 input{
     background-color: rgba(224, 219, 217, 0.53);
     color: #7E8E77;
-    margin: 20px;
+    /*margin: 20px;*/
     border-radius: 8px;
 }
 .nav-style{
@@ -41,10 +41,10 @@ input{
     color: #7E8E77 !important;
 }
 .leghand{
-    background-color: rgba(224, 219, 217, 0.53);
-    color: #7E8E77;
+    background-color: darkslategrey;
+    color: white;
     margin-bottom: 0;
-    margin-top: 2em;
+    margin-top: 5rem;
     list-style: none;
 }
 .perpage-div{
@@ -95,6 +95,16 @@ input{
     border-color: #7E8E77;
     background-color: #D89D91;
 }
+.viewbutton{
+    color: #F7F4EA;
+    border-color: white;
+    background-color: #7E8E77;
+}
+.viewbutton:hover{
+    color: #7E8E77;
+    border-color: white;
+    background-color: #F7F4EA;
+}
 .landing-style{
     background-color: rgba(224, 219, 217, 0.53);
     border-radius: 8px;
@@ -108,9 +118,6 @@ input{
     margin: auto;
     padding-bottom: 20px;
     border-radius: 8px;
-}
-.login-label{
-
 }
 .login-btn-style{
     width: 80%;
@@ -128,14 +135,15 @@ input{
     margin: auto;
     display: block;
 }
-#landing-img{
-    /*width: 35em;*/
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 20px;
-    width: 50%;
+.leghand-a{
+    color: #7E8E77;
+    text-align: center;
 }
+.leghand-a:active{
+    color: #7E8E77;
+    text-decoration: none;
+}
+
 #perpage{
     padding: 0;
     margin: 0;

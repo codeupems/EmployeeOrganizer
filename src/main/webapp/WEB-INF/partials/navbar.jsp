@@ -25,7 +25,6 @@
             <li class="nav-item nav-li" id="reguser">
                 <a class="nav-link"  href="/registeruser">Register User</a>
             </li>
-
             <li class="nav-item" id="create">
                 <a class="nav-link" href="/registeremployee" tabindex="-1"
                   >Register Employee</a>

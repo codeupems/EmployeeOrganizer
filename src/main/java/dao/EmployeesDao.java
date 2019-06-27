@@ -96,7 +96,7 @@ public class EmployeesDao implements Employees {
 
     @Override
     public List<Employee> searchName(String searchQuery) {
-        System.out.println("search by name started");
+//        System.out.println("search by name started");
         List<Employee> employeesList;
         String sQFirst = "";
         String sQSecond = "";
@@ -119,7 +119,7 @@ public class EmployeesDao implements Employees {
 
     @Override
     public List<Employee> searchID(String searchQuery) {
-        System.out.println("search by id started");
+//        System.out.println("search by id started");
         List<Employee> employeesList = new ArrayList<>();
 
 
@@ -132,7 +132,7 @@ public class EmployeesDao implements Employees {
 
     @Override
     public List<Employee> searchDept(String searchQuery) {
-        System.out.println("search by department started");
+//        System.out.println("search by department started");
         int deptID = 0;
         switch (searchQuery.toLowerCase()) {
             case "technology":
@@ -230,7 +230,7 @@ public class EmployeesDao implements Employees {
     @Override
     public Employee userInfo(int id, Employee emp) {
         String query = String.format("select * from users where emp_id = %d", id);
-        System.out.println("userInfo ran with "+query);
+//        System.out.println("userInfo ran with "+query);
         try {
             Statement stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery(query);
