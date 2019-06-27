@@ -77,7 +77,6 @@
 <div class="float-left">
     <br>
     <br class="my-5">
-
 </div>
 <div class="mt-5">
     <%@include file="partials/leghand.jsp" %>
